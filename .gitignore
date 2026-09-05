@@ -1,21 +1,18 @@
-# Ignorar absolutamente todo
+# 1. Bloqueo total (Default Deny)
 *
 
-# Permitir directorios que quieres rastrear (el trailing slash es vital)
-!/.config/
-!/.local/
-!/.local/bin/
+# 2. Permitir a Git atravesar la estructura de directorios
+!*/
 
-# Ignorar todo dentro de los directorios permitidos de nuevo
-/.config/*
-/.local/bin/*
+# 3. Infraestructura del repositorio base
+!.gitignore
+!README.md
 
-# Permitir explícitamente los archivos/directorios de configuración finales
-!/.config/nvim/
-!/.config/alacritty/
-!/.bashrc
-!/.tmux.conf
-!/.local/bin/miscript.sh
+# 4. Configuraciones permitidas explícitamente
+# Paquete: bash
+!bash/.bashrc
+!bash/.bash_profile
+!bash/.bash_aliases
 
-# Asegurar que .git y .gitignore no se bloqueen
-!/.gitignore
+# Paquete: nvim (Descomentar al migrar)
+#!nvim/.config/nvim/**
