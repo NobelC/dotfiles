@@ -1,0 +1,21 @@
+# Ignorar absolutamente todo
+*
+
+# Permitir directorios que quieres rastrear (el trailing slash es vital)
+!/.config/
+!/.local/
+!/.local/bin/
+
+# Ignorar todo dentro de los directorios permitidos de nuevo
+/.config/*
+/.local/bin/*
+
+# Permitir explícitamente los archivos/directorios de configuración finales
+!/.config/nvim/
+!/.config/alacritty/
+!/.bashrc
+!/.tmux.conf
+!/.local/bin/miscript.sh
+
+# Asegurar que .git y .gitignore no se bloqueen
+!/.gitignore
