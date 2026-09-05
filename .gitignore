@@ -15,4 +15,4 @@
 !bash/.bash_aliases
 
 # Paquete: nvim (Descomentar al migrar)
-#!nvim/.config/nvim/**
+!nvim/.config/nvim/**
