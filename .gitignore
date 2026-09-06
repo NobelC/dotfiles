@@ -20,3 +20,4 @@
 !pkglist-*.txt
 !sync.sh
 !hypr/.config/hypr/**
+!ghostty/.config/ghostty/**
