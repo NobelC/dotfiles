@@ -21,3 +21,4 @@
 !sync.sh
 !hypr/.config/hypr/**
 !ghostty/.config/ghostty/**
+!waybar/.config/waybar/**
