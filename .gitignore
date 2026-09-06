@@ -17,3 +17,5 @@
 # Paquete: nvim (Descomentar al migrar)
 !nvim/.config/nvim/**
 !install.sh
+!pkglist-*.txt
+!sync.sh

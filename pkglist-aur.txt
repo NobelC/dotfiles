@@ -1,0 +1,4 @@
+aur
+hyprland-git
+yay
+yay-debug
