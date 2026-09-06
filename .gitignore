@@ -19,3 +19,4 @@
 !install.sh
 !pkglist-*.txt
 !sync.sh
+!hypr/.config/hypr/**
