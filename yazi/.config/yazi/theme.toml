@@ -1,0 +1,91 @@
+# ~/dotfiles/yazi/.config/yazi/theme.toml
+
+[manager]
+cwd = { fg = "cyan" }
+
+hovered         = { reversed = true }
+preview_hovered = { underline = true }
+
+find_keyword  = { fg = "yellow", bold = true, italic = true, underline = true }
+find_position = { fg = "blue", bg = "reset", bold = true, italic = true }
+
+marker_copied   = { fg = "lightgreen",  bg = "lightgreen" }
+marker_cut      = { fg = "lightred",    bg = "lightred" }
+marker_marked   = { fg = "lightyellow", bg = "lightyellow" }
+marker_selected = { fg = "lightblue",   bg = "lightblue" }
+
+tab_active   = { reversed = true }
+tab_inactive = {}
+tab_width    = 1
+
+border_symbol = "│"
+border_style  = { fg = "gray" }
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "gray", bg = "gray" }
+
+mode_normal = { bg = "blue", bold = true }
+mode_select = { bg = "red", bold = true }
+mode_unset  = { bg = "magenta", bold = true }
+
+progress_label  = { bold = true }
+progress_normal = { fg = "blue", bg = "black" }
+progress_error  = { fg = "red", bg = "black" }
+
+permissions_t = { fg = "green" }
+permissions_r = { fg = "yellow" }
+permissions_w = { fg = "red" }
+permissions_x = { fg = "cyan" }
+permissions_s = { fg = "darkgray" }
+
+[select]
+border   = { fg = "blue" }
+active   = { fg = "magenta", bold = true }
+inactive = {}
+
+[input]
+border   = { fg = "blue" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+[tasks]
+border  = { fg = "blue" }
+title   = {}
+hovered = { fg = "magenta", underline = true }
+
+[which]
+mask            = { bg = "black" }
+cand            = { fg = "lightcyan" }
+rest            = { fg = "darkgray" }
+desc            = { fg = "lightmagenta" }
+separator       = "  "
+separator_style = { fg = "darkgray" }
+
+[help]
+on      = { fg = "cyan" }
+run     = { fg = "magenta" }
+desc    = { fg = "gray" }
+hovered = { bg = "darkgray", bold = true }
+footer  = { fg = "black", bg = "white" }
+
+[filetype]
+rules = [
+    # Images
+    { mime = "image/*", fg = "yellow" },
+
+    # Media
+    { mime = "{audio,video}/*", fg = "magenta" },
+
+    # Archives
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "red" },
+
+    # Documents
+    { mime = "application/{pdf,doc,rtf}", fg = "cyan" },
+
+    # Fallback
+    { name = "*", fg = "white" },
+    { name = "*/", fg = "blue" }
+]
