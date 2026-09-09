@@ -1,0 +1,29 @@
+[opener]
+edit = [
+    { run = 'nvim "$@"', block = true, desc = "Neovim" }
+]
+
+image = [
+    { run = 'imv "$@"', orphan = true, desc = "Image Viewer" }
+]
+
+pdf = [
+    { run = 'wpspdf "$@"', orphan = true, desc = "WPS PDF" }
+]
+
+word = [
+    { run = 'wps "$@"', orphan = true, desc = "WPS Writer" }
+]
+
+[open]
+rules = [
+    { mime = "text/*", use = "edit" },
+    { mime = "inode/x-empty", use = "edit" },
+    { mime = "application/json", use = "edit" },
+    { mime = "image/*", use = "image" },
+    { mime = "application/pdf", use = "pdf" },
+    
+    { name = "*.doc", use = "word" },
+    { name = "*.docx", use = "word" },
+    { name = "*.rtf", use = "word" }
+:wps]

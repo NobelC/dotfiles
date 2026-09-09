@@ -11,6 +11,7 @@ hl.bind(progs.mainMod .. " + F", hl.dsp.exec_cmd(progs.fileManager))
 hl.bind(progs.mainMod .. " + SPACE", hl.dsp.exec_cmd(progs.menu))
 hl.bind(progs.mainMod .. " + B", hl.dsp.exec_cmd(progs.browser))
 hl.bind(progs.mainMod .. " + BACKSPACE", hl.dsp.window.close())
+hl.bind(progs.mainMod .. " + ALT + O", hl.dsp.exec_cmd("flatpak run io.github.OpenToonz"))
 
 -- Apagar sistema (con fallback)
 hl.bind(progs.mainMod .. " + SHIFT + BACKSPACE",
@@ -68,10 +69,8 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURC
   { locked = true, repeating = true })
 
 -- Brillo
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),
-  { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),
-  { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s +5%"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 5%-"))
 
 -- ==========================================
 -- 7. SUBMAPAS - Máquina de Estados de Entrada
@@ -131,6 +130,35 @@ hl.define_submap("layout", function()
   hl.bind("equal", hl.dsp.layout("splitratio +0.1"))  -- Aumentar ratio
   hl.bind("minus", hl.dsp.layout("splitratio -0.1"))  -- Disminuir ratio
   hl.bind("0", hl.dsp.layout("splitratio 1.0 exact")) -- Resetear a 50/50
+end)
+
+-- ==========================================
+-- 8. SCRATCHPADS (Special Workspaces)
+-- ==========================================
+-- ==========================================
+-- 8. SCRATCHPADS (Special Workspaces)
+-- ==========================================
+
+-- A. Toggle Terminal de Monitoreo (btop)
+hl.bind(progs.mainMod .. " + M", hl.dsp.workspace.toggle_special("monitor"))
+
+-- B. Toggle Reproductor de Música
+hl.bind(progs.mainMod .. " + N", hl.dsp.workspace.toggle_special("music"))
+
+-- C. Toggle Bloc de Notas
+hl.bind(progs.mainMod .. " + O", hl.dsp.workspace.toggle_special("notes"))
+
+-- D. Lanzar scratchpads manualmente (solo si no están en autostart)
+hl.bind(progs.mainMod .. " + SHIFT + M", hl.dsp.exec_cmd(progs.terminal .. " --title=Monitor -e btop"))
+hl.bind(progs.mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("spotify"))
+hl.bind(progs.mainMod .. " + SHIFT + O", hl.dsp.exec_cmd("obsidian"))
+
+-- E. Ocultar scratchpad actual
+hl.bind(progs.mainMod .. " + ESCAPE", function()
+  local win = hl.get_active_window()
+  if win and win.workspace and win.workspace.name:match("^special:") then
+    hl.dispatch(hl.dsp.workspace.toggle_special(win.workspace.name:gsub("special:", "")))
+  end
 end)
 
 -- FIN DE KEYBINDS

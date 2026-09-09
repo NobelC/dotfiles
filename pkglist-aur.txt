@@ -1,4 +1,6 @@
 aur
 hyprland-git
+ttf-wps-fonts
+wps-office
 yay
 yay-debug
