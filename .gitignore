@@ -23,3 +23,4 @@
 !ghostty/.config/ghostty/**
 !waybar/.config/waybar/**
 !yazi/.config/yazi/**
+!scripts/.local/bin/**
