@@ -1,0 +1,149 @@
+[[manager.keymap]]
+on   = ["<Enter>"]
+run  = "open"
+desc = "Open the selected files"
+
+[[manager.keymap]]
+on   = ["l"]
+run  = "open"
+desc = "Open the selected files"
+
+[[manager.keymap]]
+on   = ["L"]
+run  = "open --interactive"
+desc = "Open with specific application"
+
+[[manager.keymap]]
+on   = ["<Space>"]
+run  = ["toggle", "move --step=down"]
+desc = "Toggle the selected files"
+
+[[manager.keymap]]
+on   = ["a"]
+run  = "create"
+desc = "Create a file or directory"
+
+[[manager.keymap]]
+on   = ["r"]
+run  = "rename --cursor=before_ext"
+desc = "Rename the selected files"
+
+[[manager.keymap]]
+on   = ["d"]
+run  = "delete"
+desc = "Move the selected files to the trash"
+
+[[manager.keymap]]
+on   = ["D"]
+run  = "delete --permanently"
+desc = "Permanently delete the selected files"
+
+[[manager.keymap]]
+on   = ["x"]
+run  = "cut"
+desc = "Cut the selected files"
+
+[[manager.keymap]]
+on   = ["y"]
+run  = "yank"
+desc = "Copy the selected files"
+
+[[manager.keymap]]
+on   = ["p"]
+run  = "paste"
+desc = "Paste the copied files"
+
+[[manager.keymap]]
+on   = ["P"]
+run  = "paste --force"
+desc = "Paste the copied files (overwrite)"
+
+[[manager.keymap]]
+on   = ["u"]
+run  = "undo"
+desc = "Undo the last operation"
+
+[[manager.keymap]]
+on   = ["."]
+run  = "hidden toggle"
+desc = "Toggle hidden files"
+
+[[manager.keymap]]
+on   = ["z"]
+run  = "cd ~"
+desc = "Go to home directory"
+
+[[manager.keymap]]
+on   = ["f"]
+run  = "find"
+desc = "Find files"
+
+[[manager.keymap]]
+on   = ["s"]
+run  = "search"
+desc = "Search content using ripgrep"
+
+[[manager.keymap]]
+on   = ["q"]
+run  = "quit"
+desc = "Exit the process"
+
+[[manager.keymap]]
+on   = ["Q"]
+run  = "quit --no-cwd-file"
+desc = "Exit without writing cwd-file"
+
+[[manager.keymap]]
+on   = ["k"]
+run  = "move --step=-1"
+desc = "Move the cursor up"
+
+[[manager.keymap]]
+on   = ["j"]
+run  = "move --step=1"
+desc = "Move the cursor down"
+
+[[manager.keymap]]
+on   = ["h"]
+run  = "leave"
+desc = "Go back to the parent directory"
+
+[[manager.keymap]]
+on   = ["gg"]
+run  = "arrow -99999999"
+desc = "Move to the top"
+
+[[manager.keymap]]
+on   = ["G"]
+run  = "arrow 99999999"
+desc = "Move to the bottom"
+
+[[manager.keymap]]
+on   = ["V"]
+run  = "visual_mode"
+desc = "Enter visual mode (selection mode)"
+
+[[manager.keymap]]
+on   = ["t"]
+run  = "tab_create --current"
+desc = "Create a new tab with CWD"
+
+[[manager.keymap]]
+on   = ["w"]
+run  = "tasks_show"
+desc = "Show task manager"
+
+[[manager.keymap]]
+on   = ["~"]
+run  = "help"
+desc = "Open help"
+
+[[input.keymap]]
+on   = ["<Esc>"]
+run  = "close"
+desc = "Cancel input"
+
+[[input.keymap]]
+on   = ["<Enter>"]
+run  = "close --submit"
+desc = "Submit input"
