@@ -16,7 +16,6 @@ marker_selected = { fg = "lightblue",   bg = "lightblue" }
 
 tab_active   = { reversed = true }
 tab_inactive = {}
-tab_width    = 1
 
 border_symbol = "│"
 border_style  = { fg = "gray" }
@@ -86,6 +85,6 @@ rules = [
     { mime = "application/{pdf,doc,rtf}", fg = "cyan" },
 
     # Fallback
-    { name = "*", fg = "white" },
-    { name = "*/", fg = "blue" }
+    { url = "*", fg = "white" },
+    { url = "*/", fg = "blue" }
 ]
