@@ -23,7 +23,7 @@ rules = [
     { mime = "image/*", use = "image" },
     { mime = "application/pdf", use = "pdf" },
     
-    { name = "*.doc", use = "word" },
-    { name = "*.docx", use = "word" },
-    { name = "*.rtf", use = "word" }
-:wps]
+    { url = "*.doc", use = "word" },
+    { url = "*.docx", use = "word" },
+    { url = "*.rtf", use = "word" }
+]
