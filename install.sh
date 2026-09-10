@@ -7,7 +7,7 @@ echo "[*] Instalando dependencias base..."
 sudo pacman -Syu --noconfirm
 
 echo "[*] Instalando paquetes de repositorios oficiales..."
-if [ -f "pkglist-oficial.txt" ]; then
+if [ -f "pkglist-official.txt" ]; then
   sudo pacman -S --needed --noconfirm - <pkglist-official.txt
 else
   echo "[*] Advertencia : pkglist-official.txt no encontrado. Saltando"

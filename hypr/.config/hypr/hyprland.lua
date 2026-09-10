@@ -1,13 +1,15 @@
 -- INIT: hyprland.lua
 require("conf.programs")
+require("conf.rules")
+
 require("conf.keybinds")
 require("conf.monitors")
 require("conf.input")
 require("conf.animations")
 require("conf.layout.dwindle")
-require("conf.rules")
+require("conf.autostart")
+require("conf.aesthetics")
 
--- Pasamos una tabla a la función hl.config
 hl.config({
   -- 1. Forzar las variables XDG para que el sistema sepa que estás en Hyprland
   env = {

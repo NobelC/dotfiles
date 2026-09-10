@@ -135,9 +135,6 @@ end)
 -- ==========================================
 -- 8. SCRATCHPADS (Special Workspaces)
 -- ==========================================
--- ==========================================
--- 8. SCRATCHPADS (Special Workspaces)
--- ==========================================
 
 -- A. Toggle Terminal de Monitoreo (btop)
 hl.bind(progs.mainMod .. " + M", hl.dsp.workspace.toggle_special("monitor"))

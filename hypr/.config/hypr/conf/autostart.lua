@@ -1,25 +1,24 @@
+-- =====================================================================
+-- AUTOSTART - Servicios y Scratchpads al iniciar Hyprland
+-- =====================================================================
+local progs = require("conf.programs")
+
 local services = {
   "waybar",
   "hyprpaper",
   "nm-applet",
 }
 
-local progs = require("conf.programs")
-
 hl.on("hyprland.start", function()
+  -- Servicios de sistema
   for _, service in ipairs(services) do
-    hl.dispatch(hl.dsp.exec_cmd(service))
-  end
-end)
-
-hl.on("hyprland.start", function()
-  -- Servicios existentes
-  for _, service in ipairs({ "waybar", "hyprpaper", "nm-applet" }) do
     hl.dispatch(hl.dsp.exec_cmd(service))
   end
 
   -- Lanzar scratchpads en segundo plano
-  hl.dispatch(hl.dsp.exec_cmd(progs.monitor)) -- Usa el comando completo
+  -- (las window rules en conf/rules.lua deben estar cargadas ANTES
+  -- de este punto para que caigan en su special workspace correcto)
+  hl.dispatch(hl.dsp.exec_cmd(progs.monitor))
   hl.dispatch(hl.dsp.exec_cmd(progs.music))
   hl.dispatch(hl.dsp.exec_cmd(progs.notes))
 end)
