@@ -3,9 +3,12 @@
 -- =====================================================================
 local progs = require("conf.programs")
 
+-- hyprpolkitagent NO va aquí: se gestiona vía systemd --user
+-- (systemctl --user enable --now hyprpolkitagent.service)
 local services = {
   "waybar",
   "hyprpaper",
+  "hypridle",
   "nm-applet",
 }
 

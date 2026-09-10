@@ -14,8 +14,13 @@ hl.bind(progs.mainMod .. " + BACKSPACE", hl.dsp.window.close())
 hl.bind(progs.mainMod .. " + ALT + O", hl.dsp.exec_cmd("flatpak run io.github.OpenToonz"))
 
 -- Apagar sistema (con fallback)
-hl.bind(progs.mainMod .. " + SHIFT + BACKSPACE",
-  hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"))
+hl.bind(progs.mainMod .. " + SHIFT + BACKSPACE", hl.dsp.exec_cmd("hyprshutdown"))
+
+-- Bloquear sesión
+hl.bind(progs.mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
+
+-- Color picker
+hl.bind(progs.mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
 -- ==========================================
 -- 2. Gestión de Ventanas

@@ -1,5 +1,6 @@
 aur
 hyprland-git
+hyprsysteminfo
 spotify
 ttf-wps-fonts
 wps-office

@@ -11,6 +11,15 @@ git
 github-cli
 gitleaks
 grub
+hypridle
+hyprlauncher
+hyprlock
+hyprpaper
+hyprpicker
+hyprpolkitagent
+hyprpwcenter
+hyprshutdown
+hyprsunset
 intel-ucode
 jq
 kitty
