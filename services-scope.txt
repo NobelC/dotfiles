@@ -3,4 +3,3 @@ hyprsunset
 hypridle
 hyprpaper
 waybar
-waybar

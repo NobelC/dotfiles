@@ -27,6 +27,7 @@ less
 linux
 linux-firmware
 ly
+man-db
 mpv
 nano
 nautilus
@@ -42,6 +43,7 @@ stow
 sudo
 swayimg
 tree
+ttf-jetbrains-mono-nerd
 unarchiver
 waybar
 wireplumber

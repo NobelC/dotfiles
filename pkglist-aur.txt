@@ -1,8 +1,11 @@
+aether
 aur
+elephant
 hyprland-git
 hyprsysteminfo
 spotify
 ttf-wps-fonts
+walker
 wps-office
 yay
 yay-debug
