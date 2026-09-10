@@ -1,0 +1,4 @@
+hyprpolkitagent.service
+hyprsunset.service
+hypridle.service
+hyprpaper.service

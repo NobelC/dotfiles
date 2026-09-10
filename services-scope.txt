@@ -1,0 +1,4 @@
+hyprpolkitagent
+hyprsunset
+hypridle
+hyprpaper

@@ -11,6 +11,8 @@ M.browser = "firefox"
 M.notes = "obsidian"
 M.music = "spotify"
 M.monitor = "ghostty --title=Monitor -e bash -c 'btop; exec bash'"
+M.audioControl = "hyprpwcenter"
+M.colorPicker = "hyprpicker -a"
 
 -- Nombres de scratchpads
 M.scratchpad_monitor = "monitor"

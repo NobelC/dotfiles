@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Actualizando manifiestos de dotfiles...
+When = PostTransaction
+Exec = /bin/sh -c 'pacman -Qqen > /home/nobel/dotfiles/pkglist-official.txt && pacman -Qqem > /home/nobel/dotfiles/pkglist-aur.txt && chown nobel:nobel /home/nobel/dotfiles/pkglist-*.txt && /usr/bin/runuser -u nobel -- /bin/bash /home/nobel/dotfiles/scripts/.local/bin/register-services.sh'

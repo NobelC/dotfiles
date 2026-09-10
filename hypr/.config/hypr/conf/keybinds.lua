@@ -12,6 +12,8 @@ hl.bind(progs.mainMod .. " + SPACE", hl.dsp.exec_cmd(progs.menu))
 hl.bind(progs.mainMod .. " + B", hl.dsp.exec_cmd(progs.browser))
 hl.bind(progs.mainMod .. " + BACKSPACE", hl.dsp.window.close())
 hl.bind(progs.mainMod .. " + ALT + O", hl.dsp.exec_cmd("flatpak run io.github.OpenToonz"))
+-- Centro de control de audio
+hl.bind(progs.mainMod .. " + SHIFT + A", hl.dsp.exec_cmd(progs.audioControl))
 
 -- Apagar sistema (con fallback)
 hl.bind(progs.mainMod .. " + SHIFT + BACKSPACE", hl.dsp.exec_cmd("hyprshutdown"))
