@@ -138,7 +138,8 @@ hl.define_submap("layout", function()
   hl.bind("minus", hl.dsp.layout("splitratio -0.1"))  -- Disminuir ratio
   hl.bind("0", hl.dsp.layout("splitratio 1.0 exact")) -- Resetear a 50/50
 end)
-
+-- Expandir ventana activa horizontalmente (todo el ancho, respetando gaps)
+hl.bind(progs.mainMod .. " + X", hl.dsp.exec_cmd("~/.local/bin/expand_horizontal.sh"))
 -- ==========================================
 -- 8. SCRATCHPADS (Special Workspaces)
 -- ==========================================

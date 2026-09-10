@@ -2,3 +2,5 @@ hyprpolkitagent
 hyprsunset
 hypridle
 hyprpaper
+waybar
+waybar
