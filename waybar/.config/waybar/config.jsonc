@@ -6,16 +6,14 @@
   "margin-top": 2,
   "margin-left": 2,
   "margin-right": 2,
-
+  
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/submap"
   ],
-
   "modules-center": [
     "clock"
   ],
-
   "modules-right": [
     "tray",
     "privacy",
@@ -34,7 +32,6 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
-
     "format-icons": {
       "1": "●",
       "2": "●",
@@ -43,28 +40,23 @@
       "5": "●",
       "default": "●"
     },
-
     "persistent-workspaces": {
       "*": [1, 2, 3, 4, 5]
     }
   },
-
   "hyprland/submap": {
     "format": "󰌌 {}",
     "tooltip": false
   },
-
   "clock": {
     "format": "{:%H:%M}",
     "format-alt": "{:%A, %d %B %Y}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
-
   "tray": {
     "icon-size": 16,
     "spacing": 8
   },
-
   "privacy": {
     "icon-size": 16,
     "transition-duration": 250,
@@ -83,7 +75,6 @@
       }
     }
   },
-
   "systemd-failed-units": {
     "format": "󰀪 {}",
     "system": true,
@@ -92,26 +83,22 @@
     "on-click": "foot -e systemctl --failed",
     "tooltip": true
   },
-
   "cpu": {
     "format": "󰍛 {usage}%",
     "tooltip": true,
     "on-click": "foot -e btop"
   },
-
   "memory": {
     "format": "󰘚 {}%",
     "tooltip": true,
     "on-click": "foot -e btop"
   },
-
   "temperature": {
     "format": "󰔏 {temperatureC}°C",
     "critical-threshold": 80,
     "format-critical": "󰔏 {temperatureC}°C",
     "tooltip": true
   },
-
   "network": {
     "format-wifi": "󰤨",
     "format-ethernet": "󰈀",
@@ -121,7 +108,6 @@
     "tooltip-format-disconnected": "Sin conexión",
     "on-click": "nm-applet"
   },
-
   "bluetooth": {
     "format": "󰂯",
     "format-disabled": "󰂲",
@@ -130,7 +116,6 @@
     "tooltip-format": "{status}\n{num_connections} dispositivos conectados",
     "on-click": "blueman-manager"
   },
-
   "pulseaudio": {
     "format": "{icon}",
     "format-muted": "󰝟",
@@ -146,7 +131,6 @@
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "scroll-step": 5
   },
-
   "backlight": {
     "format": "{icon}",
     "format-icons": [
@@ -158,7 +142,6 @@
     "on-scroll-up": "brightnessctl s +5%",
     "on-scroll-down": "brightnessctl s 5%-"
   },
-
   "battery": {
     "states": {
       "warning": 30,
@@ -181,7 +164,6 @@
     ],
     "tooltip-format": "{capacity}%\n{timeTo}\n{power}W"
   },
-
   "custom/power": {
     "format": "󰐥",
     "tooltip": true,

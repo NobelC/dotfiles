@@ -27,3 +27,4 @@ eval "$(zoxide init bash)"
 
 alias dot="cd ~/dotfiles/ && nvim ."
 alias bar="pkill waybar && waybar &"
+export PATH="$HOME/.local/bin:$PATH"
