@@ -6,42 +6,33 @@
   "margin-top": 2,
   "margin-left": 2,
   "margin-right": 2,
-  
   "modules-left": [
-    "hyprland/workspaces",
+    "clock",
     "hyprland/submap"
   ],
   "modules-center": [
-    "clock"
+    "hyprland/workspaces",
   ],
   "modules-right": [
-    "tray",
-    "privacy",
-    "systemd-failed-units",
-    "cpu",
-    "memory",
-    "temperature",
     "network",
     "bluetooth",
-    "pulseaudio",
-    "backlight",
     "battery",
-    "custom/power"
+    "pulseaudio",
+    "custom/mic",
+    "backlight",
+    "cpu"
   ],
-
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "1": "●",
-      "2": "●",
-      "3": "●",
-      "4": "●",
-      "5": "●",
-      "default": "●"
+      "1": "",
+      "2": "",
+      "3": "",
+      "default": "",
     },
     "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5]
+      "*": [1, 2, 3]
     }
   },
   "hyprland/submap": {
@@ -49,55 +40,10 @@
     "tooltip": false
   },
   "clock": {
-    "format": "{:%H:%M}",
+    "format": "{:%H:%M:%S}",
     "format-alt": "{:%A, %d %B %Y}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-  },
-  "tray": {
-    "icon-size": 16,
-    "spacing": 8
-  },
-  "privacy": {
-    "icon-size": 16,
-    "transition-duration": 250,
-    "modules": {
-      "screenshare": {
-        "format": "󰍹",
-        "tooltip": true
-      },
-      "audio-in": {
-        "format": "󰍬",
-        "tooltip": true
-      },
-      "audio-out": {
-        "format": "󰕾",
-        "tooltip": true
-      }
-    }
-  },
-  "systemd-failed-units": {
-    "format": "󰀪 {}",
-    "system": true,
-    "user": true,
-    "hide-on-ok": true,
-    "on-click": "foot -e systemctl --failed",
-    "tooltip": true
-  },
-  "cpu": {
-    "format": "󰍛 {usage}%",
-    "tooltip": true,
-    "on-click": "foot -e btop"
-  },
-  "memory": {
-    "format": "󰘚 {}%",
-    "tooltip": true,
-    "on-click": "foot -e btop"
-  },
-  "temperature": {
-    "format": "󰔏 {temperatureC}°C",
-    "critical-threshold": 80,
-    "format-critical": "󰔏 {temperatureC}°C",
-    "tooltip": true
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "interval": 1
   },
   "network": {
     "format-wifi": "󰤨",
@@ -106,41 +52,16 @@
     "tooltip-format-wifi": "{essid}\n{ifname} · {ipaddr}/{cidr}\n↓ {bandwidthDownBits} · ↑ {bandwidthUpBits}",
     "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}",
     "tooltip-format-disconnected": "Sin conexión",
-    "on-click": "nm-applet"
+    "on-click": "nm-applet",
+    "interval": 5
   },
   "bluetooth": {
-    "format": "󰂯",
+    "format": "󰂲",
     "format-disabled": "󰂲",
     "format-off": "󰂲",
-    "format-connected": "󰂱",
+    "format-connected": "󰂯",
     "tooltip-format": "{status}\n{num_connections} dispositivos conectados",
     "on-click": "blueman-manager"
-  },
-  "pulseaudio": {
-    "format": "{icon}",
-    "format-muted": "󰝟",
-    "format-icons": {
-      "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
-      ]
-    },
-    "tooltip-format": "{desc}\nVolumen: {volume}%",
-    "on-click": "hyprpwcenter",
-    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "scroll-step": 5
-  },
-  "backlight": {
-    "format": "{icon}",
-    "format-icons": [
-      "󰃞",
-      "󰃟",
-      "󰃠"
-    ],
-    "tooltip-format": "Brillo: {percent}%",
-    "on-scroll-up": "brightnessctl s +5%",
-    "on-scroll-down": "brightnessctl s 5%-"
   },
   "battery": {
     "states": {
@@ -162,12 +83,45 @@
       "󰂂",
       "󰁹"
     ],
-    "tooltip-format": "{capacity}%\n{timeTo}\n{power}W"
+    "tooltip-format": "{capacity}%\n{timeTo}\n{power}W",
+    "interval": 10
   },
-  "custom/power": {
-    "format": "󰐥",
-    "tooltip": true,
-    "tooltip-format": "Apagar / Reiniciar",
-    "on-click": "hyprshutdown"
-  }
+  "pulseaudio": {
+  "format": "{icon}",
+  "format-muted": "󰝟",
+  "format-icons": {
+    "headphone": "󰋋",
+    "hands-free": "󰋋",
+    "headset": "󰋋",
+    "phone": "󰏲",
+    "portable": "󰏲",
+    "car": "󰏲",
+    "default": ["󰝟","󰕿","󰕾"]
+  },
+  "tooltip-format": "Volumen: {volume}%\n{desc}",
+  "on-click": "pavucontrol",
+  "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+  "scroll-step": 5
+},
+"custom/mic": {
+  "format": "{}",
+  "exec": "/home/nobel/dotfiles/scripts/.local/bin/mic.sh",
+  "interval": 2,
+  "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+  "tooltip-format": "Micrófono"
+},
+  "backlight": {
+  "format": "{icon}",
+  "format-icons": ["󰃞", "󰃟", "󰃠"],
+  "tooltip-format": "Brillo: {percent}%",
+  "on-scroll-up": "brightnessctl set 5%+",
+  "on-scroll-down": "brightnessctl set 5%-",
+  "interval": 5
+},
+
+"cpu": {
+  "format": "󰍛",
+  "tooltip": false,
+  "on-click": "/home/nobel/.local/bin/toggle-cpu-stats.sh"
+}
 }

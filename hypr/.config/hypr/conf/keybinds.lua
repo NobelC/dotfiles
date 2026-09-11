@@ -34,7 +34,6 @@ hl.bind(progs.mainMod .. " + T", hl.dsp.exec_cmd("~/.local/bin/wallpaper-picker.
 -- Aether GUI
 hl.bind(progs.mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("aether"))
 
-
 -- ==========================================
 -- 2. Gestión de Ventanas
 -- ==========================================
@@ -43,11 +42,7 @@ hl.bind(progs.mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("aether"))
 hl.bind(progs.mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
 -- Toggle Monitor Modes (Mirror / Extend)
-hl.bind(
-  progs.mainMod .. " + SHIFT + M",
-  hl.dsp.exec_cmd("~/.local/bin/monitor_mode.sh")
-)
-
+hl.bind(progs.mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("~/.local/bin/monitor_mode.sh"))
 
 -- ==========================================
 -- 3. Navegación y Foco
@@ -58,146 +53,87 @@ hl.bind(progs.mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(progs.mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(progs.mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
-
 -- ==========================================
 -- 4. Mover Ventanas en el Workspace
 -- ==========================================
 
-hl.bind(
-  progs.mainMod .. " + SHIFT + left",
-  hl.dsp.window.move({ direction = "left" })
-)
+hl.bind(progs.mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
 
-hl.bind(
-  progs.mainMod .. " + SHIFT + right",
-  hl.dsp.window.move({ direction = "right" })
-)
+hl.bind(progs.mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
 
-hl.bind(
-  progs.mainMod .. " + SHIFT + up",
-  hl.dsp.window.move({ direction = "up" })
-)
+hl.bind(progs.mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
 
-hl.bind(
-  progs.mainMod .. " + SHIFT + down",
-  hl.dsp.window.move({ direction = "down" })
-)
-
+hl.bind(progs.mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
 
 -- ==========================================
 -- 5. Espacios de Trabajo
 -- ==========================================
 
-for i = 1, 5 do
-  -- Cambiar a workspace
-  hl.bind(
-    progs.mainMod .. " + " .. i,
-    hl.dsp.focus({ workspace = i })
-  )
+for i = 1, 3 do
+	-- Cambiar a workspace
+	hl.bind(progs.mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
 
-  -- Mover ventana al workspace sin seguir
-  hl.bind(
-    progs.mainMod .. " + SHIFT + " .. i,
-    hl.dsp.window.move({
-      workspace = i,
-      follow = false
-    })
-  )
+	-- Mover ventana al workspace sin seguir
+	hl.bind(
+		progs.mainMod .. " + SHIFT + " .. i,
+		hl.dsp.window.move({
+			workspace = i,
+			follow = false,
+		})
+	)
 
-  -- Mover ventana al workspace y seguirla
-  hl.bind(
-    progs.mainMod .. " + ALT + " .. i,
-    hl.dsp.window.move({
-      workspace = i,
-      follow = true
-    })
-  )
+	-- Mover ventana al workspace y seguirla
+	hl.bind(
+		progs.mainMod .. " + ALT + " .. i,
+		hl.dsp.window.move({
+			workspace = i,
+			follow = true,
+		})
+	)
 end
-
 
 -- ==========================================
 -- 6. Teclas Multimedia y Hardware
 -- ==========================================
 
 -- Volumen
-hl.bind(
-  "XF86AudioRaiseVolume",
-  hl.dsp.exec_cmd(
-    "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-  ),
-  {
-    locked = true,
-    repeating = true
-  }
-)
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), {
+	locked = true,
+	repeating = true,
+})
 
-hl.bind(
-  "XF86AudioLowerVolume",
-  hl.dsp.exec_cmd(
-    "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-  ),
-  {
-    locked = true,
-    repeating = true
-  }
-)
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), {
+	locked = true,
+	repeating = true,
+})
 
-hl.bind(
-  "XF86AudioMute",
-  hl.dsp.exec_cmd(
-    "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-  ),
-  {
-    locked = true,
-    repeating = true
-  }
-)
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), {
+	locked = true,
+	repeating = true,
+})
 
-hl.bind(
-  "XF86AudioMicMute",
-  hl.dsp.exec_cmd(
-    "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-  ),
-  {
-    locked = true,
-    repeating = true
-  }
-)
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), {
+	locked = true,
+	repeating = true,
+})
 
 -- Brillo
-hl.bind(
-  "XF86MonBrightnessUp",
-  hl.dsp.exec_cmd("brightnessctl s +5%")
-)
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s +5%"))
 
-hl.bind(
-  "XF86MonBrightnessDown",
-  hl.dsp.exec_cmd("brightnessctl s 5%-")
-)
-
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 5%-"))
 
 -- ==========================================
 -- 7. Capturas de Pantalla
 -- ==========================================
 
 -- Pantalla completa
-hl.bind(
-  progs.mainMod .. " + S",
-  hl.dsp.exec_cmd(home .. "/.local/bin/screenshot.sh full")
-)
+hl.bind(progs.mainMod .. " + S", hl.dsp.exec_cmd(home .. "/.local/bin/screenshot.sh full"))
 
 -- Seleccionar región
-hl.bind(
-  progs.mainMod .. " + SHIFT + S",
-  hl.dsp.exec_cmd(home .. "/.local/bin/screenshot.sh region")
-)
+hl.bind(progs.mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(home .. "/.local/bin/screenshot.sh region"))
 
 -- Ventana activa
-hl.bind(
-  progs.mainMod .. " + CTRL + S",
-  hl.dsp.exec_cmd(home .. "/local/bin/screenshot.sh window")
-)
-
+hl.bind(progs.mainMod .. " + CTRL + S", hl.dsp.exec_cmd(home .. "/local/bin/screenshot.sh window"))
 
 -- ==========================================
 -- 8. SUBMAPAS - Máquina de Estados de Entrada
@@ -207,258 +143,153 @@ hl.bind(
 -- SUBMAPA: RESIZE
 -- ------------------------------------------
 
-hl.bind(
-  progs.mainMod .. " + R",
-  hl.dsp.submap("resize")
-)
+hl.bind(progs.mainMod .. " + R", hl.dsp.submap("resize"))
 
 hl.define_submap("resize", function()
-  -- Salir con cualquier tecla no mapeada
-  hl.bind(
-    "catchall",
-    hl.dsp.submap("reset")
-  )
+	-- Salir con cualquier tecla no mapeada
+	hl.bind("catchall", hl.dsp.submap("reset"))
 
-  -- Salida explícita
-  hl.bind(
-    "escape",
-    hl.dsp.submap("reset")
-  )
+	-- Salida explícita
+	hl.bind("escape", hl.dsp.submap("reset"))
 
-  hl.bind(
-    "return",
-    hl.dsp.submap("reset")
-  )
+	hl.bind("return", hl.dsp.submap("reset"))
 
-  -- Redimensionar
-  hl.bind(
-    "right",
-    hl.dsp.window.resize({
-      x = 20,
-      y = 0,
-      relative = true
-    }),
-    {
-      repeating = true
-    }
-  )
+	-- Redimensionar
+	hl.bind(
+		"right",
+		hl.dsp.window.resize({
+			x = 20,
+			y = 0,
+			relative = true,
+		}),
+		{
+			repeating = true,
+		}
+	)
 
-  hl.bind(
-    "left",
-    hl.dsp.window.resize({
-      x = -20,
-      y = 0,
-      relative = true
-    }),
-    {
-      repeating = true
-    }
-  )
+	hl.bind(
+		"left",
+		hl.dsp.window.resize({
+			x = -20,
+			y = 0,
+			relative = true,
+		}),
+		{
+			repeating = true,
+		}
+	)
 
-  hl.bind(
-    "up",
-    hl.dsp.window.resize({
-      x = 0,
-      y = -20,
-      relative = true
-    }),
-    {
-      repeating = true
-    }
-  )
+	hl.bind(
+		"up",
+		hl.dsp.window.resize({
+			x = 0,
+			y = -20,
+			relative = true,
+		}),
+		{
+			repeating = true,
+		}
+	)
 
-  hl.bind(
-    "down",
-    hl.dsp.window.resize({
-      x = 0,
-      y = 20,
-      relative = true
-    }),
-    {
-      repeating = true
-    }
-  )
+	hl.bind(
+		"down",
+		hl.dsp.window.resize({
+			x = 0,
+			y = 20,
+			relative = true,
+		}),
+		{
+			repeating = true,
+		}
+	)
 end)
-
 
 -- ------------------------------------------
 -- SUBMAPA: LAYOUT
 -- ------------------------------------------
 
-hl.bind(
-  progs.mainMod .. " + L",
-  hl.dsp.submap("layout")
-)
+hl.bind(progs.mainMod .. " + L", hl.dsp.submap("layout"))
 
 hl.define_submap("layout", function()
-  -- Salir con cualquier tecla no mapeada
-  hl.bind(
-    "catchall",
-    hl.dsp.submap("reset")
-  )
+	-- Salir con cualquier tecla no mapeada
+	hl.bind("catchall", hl.dsp.submap("reset"))
 
-  -- Salida explícita
-  hl.bind(
-    "escape",
-    hl.dsp.submap("reset")
-  )
+	-- Salida explícita
+	hl.bind("escape", hl.dsp.submap("reset"))
 
-  hl.bind(
-    "return",
-    hl.dsp.submap("reset")
-  )
+	hl.bind("return", hl.dsp.submap("reset"))
 
-  -- Navegación
-  hl.bind(
-    "left",
-    hl.dsp.focus({ direction = "left" })
-  )
+	-- Navegación
+	hl.bind("left", hl.dsp.focus({ direction = "left" }))
 
-  hl.bind(
-    "right",
-    hl.dsp.focus({ direction = "right" })
-  )
+	hl.bind("right", hl.dsp.focus({ direction = "right" }))
 
-  hl.bind(
-    "up",
-    hl.dsp.focus({ direction = "up" })
-  )
+	hl.bind("up", hl.dsp.focus({ direction = "up" }))
 
-  hl.bind(
-    "down",
-    hl.dsp.focus({ direction = "down" })
-  )
+	hl.bind("down", hl.dsp.focus({ direction = "down" }))
 
-  -- Manipulación del árbol BSP
-  hl.bind(
-    "s",
-    hl.dsp.layout("togglesplit")
-  )
+	-- Manipulación del árbol BSP
+	hl.bind("s", hl.dsp.layout("togglesplit"))
 
-  hl.bind(
-    "w",
-    hl.dsp.layout("swapsplit")
-  )
+	hl.bind("w", hl.dsp.layout("swapsplit"))
 
-  hl.bind(
-    "r",
-    hl.dsp.layout("rotatesplit")
-  )
+	hl.bind("r", hl.dsp.layout("rotatesplit"))
 
-  -- Pre-selección
-  hl.bind(
-    "h",
-    hl.dsp.layout("preselect left")
-  )
+	-- Pre-selección
+	hl.bind("h", hl.dsp.layout("preselect left"))
 
-  hl.bind(
-    "l",
-    hl.dsp.layout("preselect right")
-  )
+	hl.bind("l", hl.dsp.layout("preselect right"))
 
-  hl.bind(
-    "k",
-    hl.dsp.layout("preselect up")
-  )
+	hl.bind("k", hl.dsp.layout("preselect up"))
 
-  hl.bind(
-    "j",
-    hl.dsp.layout("preselect down")
-  )
+	hl.bind("j", hl.dsp.layout("preselect down"))
 
-  -- Split ratio
-  hl.bind(
-    "equal",
-    hl.dsp.layout("splitratio +0.1")
-  )
+	-- Split ratio
+	hl.bind("equal", hl.dsp.layout("splitratio +0.1"))
 
-  hl.bind(
-    "minus",
-    hl.dsp.layout("splitratio -0.1")
-  )
+	hl.bind("minus", hl.dsp.layout("splitratio -0.1"))
 
-  hl.bind(
-    "0",
-    hl.dsp.layout("splitratio 1.0 exact")
-  )
+	hl.bind("0", hl.dsp.layout("splitratio 1.0 exact"))
 end)
-
 
 -- ==========================================
 -- 9. Utilidades de Ventana
 -- ==========================================
 
 -- Expandir ventana activa horizontalmente
-hl.bind(
-  progs.mainMod .. " + X",
-  hl.dsp.exec_cmd("~/.local/bin/expand_horizontal.sh")
-)
-
+hl.bind(progs.mainMod .. " + X", hl.dsp.exec_cmd("~/.local/bin/expand_horizontal.sh"))
 
 -- ==========================================
 -- 10. SCRATCHPADS
 -- ==========================================
 
 -- A. Toggle Terminal de Monitoreo (btop)
-hl.bind(
-  progs.mainMod .. " + M",
-  hl.dsp.workspace.toggle_special("monitor")
-)
+hl.bind(progs.mainMod .. " + M", hl.dsp.workspace.toggle_special("monitor"))
 
 -- B. Toggle Reproductor de Música
-hl.bind(
-  progs.mainMod .. " + N",
-  hl.dsp.workspace.toggle_special("music")
-)
+hl.bind(progs.mainMod .. " + N", hl.dsp.workspace.toggle_special("music"))
 
 -- C. Toggle Bloc de Notas
-hl.bind(
-  progs.mainMod .. " + O",
-  hl.dsp.workspace.toggle_special("notes")
-)
-
+hl.bind(progs.mainMod .. " + O", hl.dsp.workspace.toggle_special("notes"))
 
 -- D. Lanzar scratchpads manualmente
 --
 -- Super + Alt + M se utiliza para evitar el conflicto
 -- con Super + Shift + M (monitor_mode.sh).
-hl.bind(
-  progs.mainMod .. " + ALT + M",
-  hl.dsp.exec_cmd(
-    progs.terminal .. " --title=Monitor -e btop"
-  )
-)
+hl.bind(progs.mainMod .. " + ALT + M", hl.dsp.exec_cmd(progs.terminal .. " --title=Monitor -e btop"))
 
-hl.bind(
-  progs.mainMod .. " + SHIFT + N",
-  hl.dsp.exec_cmd("spotify")
-)
+hl.bind(progs.mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("spotify"))
 
-hl.bind(
-  progs.mainMod .. " + SHIFT + O",
-  hl.dsp.exec_cmd("obsidian")
-)
-
+hl.bind(progs.mainMod .. " + SHIFT + O", hl.dsp.exec_cmd("obsidian"))
 
 -- E. Ocultar scratchpad actual
-hl.bind(
-  progs.mainMod .. " + ESCAPE",
-  function()
-    local win = hl.get_active_window()
+hl.bind(progs.mainMod .. " + ESCAPE", function()
+	local win = hl.get_active_window()
 
-    if win
-        and win.workspace
-        and win.workspace.name:match("^special:")
-    then
-      hl.dispatch(
-        hl.dsp.workspace.toggle_special(
-          win.workspace.name:gsub("special:", "")
-        )
-      )
-    end
-  end
-)
-
+	if win and win.workspace and win.workspace.name:match("^special:") then
+		hl.dispatch(hl.dsp.workspace.toggle_special(win.workspace.name:gsub("special:", "")))
+	end
+end)
 
 -- ==========================================
 -- FIN DE KEYBINDS

@@ -9,8 +9,8 @@
 window#waybar {
   background: alpha(@background, 0.92);
   color: @foreground;
-  border-radius: 10px;
-  border: 2px solid alpha(@inactive, 0.6);
+  border-radius: 5px;
+  border: 1px solid alpha(@inactive, 0.6);
 }
 
 #workspaces {
@@ -19,20 +19,22 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 10px;
-  border-radius: 8px;
-  color: @inactive;
-  background: transparent;
+  padding: 0;
+  margin: 5px 3px;
+  border-radius: 999px;
+  min-width: 28px;
+  background: alpha(@foreground, 0.30);
+  transition: background 0.25s ease, min-width 0.25s ease;
 }
 
 #workspaces button.active {
-  color: @background;
   background: @accent;
-  border-radius: 8px;
+  min-width: 46px;
+  box-shadow: 0 0 8px alpha(@accent, 0.55);
 }
 
 #workspaces button:hover {
-  background: alpha(@accent, 0.25);
+  background: alpha(@accent, 0.45);
 }
 
 #window {
@@ -46,35 +48,32 @@ window#waybar {
   padding: 0 12px;
 }
 
-#tray,
-#pulseaudio,
 #network,
-#backlight,
-#battery,
-#custom-power {
-  padding: 0 10px;
-  margin: 0 2px;
-  color: @foreground;
-}
-
-#pulseaudio {
-  color: @green;
-}
-
-#network {
+#bluetooth {
   color: @cyan;
+  padding: 0 5px;
+  margin: 0 2px;
+  transition: color 0.2s ease;
 }
 
-#network.disconnected {
+#network.disconnected,
+#bluetooth.disabled,
+#bluetooth.off {
   color: @red;
 }
 
-#backlight {
-  color: @orange;
+tooltip {
+  background: @background;
+  color: @foreground;
+  border: 1px solid @inactive;
+  border-radius: 8px;
 }
 
 #battery {
   color: @green;
+  padding: 0 5px;
+  margin: 0 2px;
+  transition: color 0.3s ease;
 }
 
 #battery.warning {
@@ -85,20 +84,52 @@ window#waybar {
   color: @red;
 }
 
-#custom-power {
+#custom-music {
+  color: @accent;
+  padding: 0 5px;
+  margin: 0 4px;
+  background: alpha(@accent, 0.1);
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+#pulseaudio {
+  color: @green;
+  padding: 0 5px;
+  margin: 0 2px;
+}
+
+#pulseaudio.muted {
   color: @red;
-  font-weight: bold;
-  padding: 0 14px;
+  padding: 0 5px;
+  margin: 0 2px;
 }
 
-#custom-power:hover {
-  background: alpha(@red, 0.2);
-  border-radius: 8px;
+#custom-mic {
+  color: @cyan;
+  padding: 0 5px;
+  margin: 0 2px;
+  transition: color 0.2s ease;
 }
 
-tooltip {
-  background: @background;
+#custom-mic.muted {
+  color: @red;
+}
+
+#backlight {
+  color: @orange;
+  padding: 0 5px;
+  margin: 0 2px;
+  transition: color 0.2s ease;
+}
+
+#cpu {
+  color: @cyan;
+  padding: 0 5px;
+  margin: 0 2px;
+  transition: color 0.2s ease;
+}
+
+#cpu:hover {
   color: @foreground;
-  border: 1px solid @inactive;
-  border-radius: 8px;
 }

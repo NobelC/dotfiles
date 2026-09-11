@@ -1,6 +1,8 @@
 aether
 aur
 elephant
+eww
+eww-debug
 hyprland-git
 hyprsysteminfo
 spotify

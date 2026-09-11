@@ -1,0 +1,37 @@
+(defwindow sys-stats
+  :monitor 0
+  :geometry (geometry :x "10px"
+                      :y "10px"
+                      :width "180px"
+                      :height "132px"
+                      :anchor "top right")  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  (box :orientation "vertical" :spacing 2 :class "sys-stats-box"
+    (label :text "┌─ system ───────────┐" :class "frame" :xalign 0.0)
+    (label :text "${cpu}"  :class "row row-cpu"  :xalign 0.0)
+    (label :text "${ram}"  :class "row row-ram"  :xalign 0.0)
+    (label :text "${disk}" :class "row row-disk" :xalign 0.0)
+    (label :text "${temp}" :class "row row-temp" :xalign 0.0)
+    (label :text "└────────────────────┘" :class "frame" :xalign 0.0)
+  )
+)
+
+(defwindow sys-stats-bg
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "100%"
+                      :anchor "top left")
+  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  :focusable false
+  (button :onclick "eww close sys-stats sys-stats-bg"
+    (box :class "bg-catcher")))
+
+(defpoll cpu  :interval "2s"  "/home/nobel/.local/bin/sysstat.sh cpu")
+(defpoll ram  :interval "5s"  "/home/nobel/.local/bin/sysstat.sh ram")
+(defpoll disk :interval "30s" "/home/nobel/.local/bin/sysstat.sh disk")
+(defpoll temp :interval "5s"  "/home/nobel/.local/bin/sysstat.sh temp")
