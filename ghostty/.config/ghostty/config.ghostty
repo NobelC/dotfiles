@@ -1,0 +1,9 @@
+# El include de Aether se procesa al final, asi que debe declararse
+# primero para que sus valores (background, foreground, palette)
+# tengan efecto. El signo ? hace que sea opcional: si el archivo no
+# existe (maquina nueva sin Aether corrido aun), Ghostty no truena.
+config-file = ?"~/.config/aether/theme/ghostty.conf"
+
+font-family = JetBrainsMono Nerd Font
+font-size = 12
+window-decoration = false

@@ -6,7 +6,7 @@ M.mainMod = "SUPER"
 -- Comandos de aplicaciones
 M.terminal = "ghostty"
 M.fileManager = "ghostty -e yazi"
-M.menu = "hyprlauncher"
+M.menu = "wofi --show drun"
 M.browser = "firefox"
 M.notes = "obsidian"
 M.music = "spotify"

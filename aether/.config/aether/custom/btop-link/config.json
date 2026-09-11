@@ -1,0 +1,4 @@
+{
+  "template": "noop.txt",
+  "destination": "~/.config/aether/custom/btop-link/noop.txt"
+}

@@ -1,0 +1,1 @@
+/home/nobel/.config/aether/theme/wofi-noop.txt
