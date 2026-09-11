@@ -31,7 +31,6 @@
 !aether/.config/aether/custom/**
 !mako/.config/mako/**
 !eww/.config/eww/**
-
 !hypr/.config/hypr/**
 hypr/.config/hypr/theme_colors.lua
 

@@ -69,7 +69,7 @@ hl.bind(progs.mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "do
 -- 5. Espacios de Trabajo
 -- ==========================================
 
-for i = 1, 3 do
+for i = 1, 5 do
 	-- Cambiar a workspace
 	hl.bind(progs.mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
 

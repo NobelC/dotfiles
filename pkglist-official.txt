@@ -5,7 +5,6 @@ brightnessctl
 btop
 clang
 efibootmgr
-fastfetch
 firefox
 flatpak
 fuse2
