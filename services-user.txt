@@ -3,3 +3,4 @@ hyprsunset.service
 hypridle.service
 hyprpaper.service
 waybar.service
+mako.service

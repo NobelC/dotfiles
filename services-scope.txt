@@ -4,3 +4,4 @@ hypridle
 hyprpaper
 waybar
 elephant
+mako

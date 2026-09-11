@@ -25,9 +25,11 @@ intel-ucode
 jq
 kitty
 less
+libnotify
 linux
 linux-firmware
 ly
+mako
 man-db
 mpv
 nano

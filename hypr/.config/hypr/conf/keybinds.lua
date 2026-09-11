@@ -23,6 +23,11 @@ hl.bind(progs.mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- Color picker
 hl.bind(progs.mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
+-- Selector de wallpaper (aplica tema dinamico via Aether)
+hl.bind(progs.mainMod .. " + T", hl.dsp.exec_cmd("~/.local/bin/wallpaper-picker.sh"))
+
+-- Abrir Aether GUI completo (ajustes finos, Wallhaven, etc.)
+hl.bind(progs.mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("aether"))
 
 -- ==========================================
 -- 2. Gestión de Ventanas

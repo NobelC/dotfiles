@@ -29,6 +29,7 @@
 !systemd/.config/systemd/user/**
 !pacman/hooks/**
 !aether/.config/aether/custom/**
+!mako/.config/mako/**
 
 !hypr/.config/hypr/**
 hypr/.config/hypr/theme_colors.lua

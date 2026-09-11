@@ -1,0 +1,5 @@
+include=~/.config/aether/theme/mako.ini
+
+# Ajustes propios, no cubiertos por el tema de Aether
+sort=-time
+layer=overlay
