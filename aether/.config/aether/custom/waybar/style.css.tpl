@@ -1,0 +1,9 @@
+@define-color background {background};
+@define-color foreground {foreground};
+@define-color accent {accent};
+@define-color inactive {muted};
+@define-color green {green};
+@define-color red {red};
+@define-color yellow {yellow};
+@define-color orange {orange};
+@define-color cyan {cyan};

@@ -28,3 +28,10 @@
 !scripts/.local/bin/**
 !systemd/.config/systemd/user/**
 !pacman/hooks/**
+!aether/.config/aether/custom/**
+
+!hypr/.config/hypr/**
+hypr/.config/hypr/theme_colors.lua
+
+!waybar/.config/waybar/**
+waybar/.config/waybar/colors-aether.css

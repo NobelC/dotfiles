@@ -1,0 +1,4 @@
+{
+  "template": "style.css.tpl",
+  "destination": "~/.config/waybar/colors-aether.css"
+}

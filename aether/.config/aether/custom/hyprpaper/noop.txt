@@ -1,0 +1,1 @@
+/home/nobel/.config/aether/theme/hyprpaper-noop.txt

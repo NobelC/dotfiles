@@ -1,14 +1,16 @@
+@import "colors-aether.css";
+
 * {
-  font-family: "JetBrains Mono";
-  font-size: 14px;
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-size: 13px;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(26, 27, 38, 0.92);  
-  color: #c0caf5;
-  border-radius: 1px;
-  border: 1px solid rgba(65, 72, 104, 0.6); /* #414868 - inactive_border */
+  background: alpha(@background, 0.92);
+  color: @foreground;
+  border-radius: 10px;
+  border: 2px solid alpha(@inactive, 0.6);
 }
 
 #workspaces {
@@ -19,27 +21,28 @@ window#waybar {
 #workspaces button {
   padding: 0 10px;
   border-radius: 8px;
-  color: #565f89;
+  color: @inactive;
   background: transparent;
 }
 
 #workspaces button.active {
-  color: #1a1b26;
-  background: #7aa2f7; /* active_border */
+  color: @background;
+  background: @accent;
   border-radius: 8px;
 }
 
 #workspaces button:hover {
-  background: rgba(122, 162, 247, 0.25);
+  background: alpha(@accent, 0.25);
 }
 
 #window {
-  color: #a9b1d6;
+  color: @foreground;
   padding: 0 10px;
 }
 
 #clock {
-  color: #7aa2f7;
+  color: @accent;
+  font-weight: bold;
   padding: 0 12px;
 }
 
@@ -51,51 +54,51 @@ window#waybar {
 #custom-power {
   padding: 0 10px;
   margin: 0 2px;
-  color: #c0caf5;
+  color: @foreground;
 }
 
 #pulseaudio {
-  color: #9ece6a;
+  color: @green;
 }
 
 #network {
-  color: #7dcfff;
+  color: @cyan;
 }
 
 #network.disconnected {
-  color: #f7768e;
+  color: @red;
 }
 
 #backlight {
-  color: #e0af68;
+  color: @orange;
 }
 
 #battery {
-  color: #9ece6a;
+  color: @green;
 }
 
 #battery.warning {
-  color: #e0af68;
+  color: @orange;
 }
 
 #battery.critical {
-  color: #f7768e;
+  color: @red;
 }
 
 #custom-power {
-  color: #f7768e;
+  color: @red;
   font-weight: bold;
   padding: 0 14px;
 }
 
 #custom-power:hover {
-  background: rgba(247, 118, 142, 0.2);
+  background: alpha(@red, 0.2);
   border-radius: 8px;
 }
 
 tooltip {
-  background: #1a1b26;
-  color: #c0caf5;
-  border: 1px solid #414868;
+  background: @background;
+  color: @foreground;
+  border: 1px solid @inactive;
   border-radius: 8px;
 }

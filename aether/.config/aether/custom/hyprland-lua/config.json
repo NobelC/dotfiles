@@ -1,0 +1,4 @@
+{
+  "template": "theme_colors.lua.tpl",
+  "destination": "~/.config/hypr/theme_colors.lua"
+}

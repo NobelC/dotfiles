@@ -3,3 +3,4 @@ hyprsunset
 hypridle
 hyprpaper
 waybar
+elephant
