@@ -42,3 +42,6 @@ btop/.config/btop/themes/**
 
 !waybar/.config/waybar/**
 waybar/.config/waybar/colors-aether.css
+
+!wofi/.config/wofi/**
+wofi/.config/wofi/colors-aether.css
