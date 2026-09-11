@@ -166,5 +166,13 @@ hl.bind(progs.mainMod .. " + ESCAPE", function()
   end
 end)
 
+-- ==========================================
+-- 7. CAPTURAS DE PANTALLA
+-- ==========================================
+
+hl.bind("PRINT", hl.dsp.exec_cmd("screenshot.sh full"))
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("screenshot.sh region"))
+hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("screenshot.sh window"))
+
 -- FIN DE KEYBINDS
 -- ==========================================

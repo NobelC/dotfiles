@@ -16,7 +16,20 @@
     "clock"
   ],
 
-  "modules-right": [],
+  "modules-right": [
+    "tray",
+    "privacy",
+    "systemd-failed-units",
+    "cpu",
+    "memory",
+    "temperature",
+    "network",
+    "bluetooth",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "custom/power"
+  ],
 
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -28,7 +41,7 @@
       "3": "●",
       "4": "●",
       "5": "●",
-      "default": "{id}"
+      "default": "●"
     },
 
     "persistent-workspaces": {
@@ -37,7 +50,7 @@
   },
 
   "hyprland/submap": {
-    "format": "{}",
+    "format": "󰌌 {}",
     "tooltip": false
   },
 
@@ -45,5 +58,134 @@
     "format": "{:%H:%M}",
     "format-alt": "{:%A, %d %B %Y}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+
+  "privacy": {
+    "icon-size": 16,
+    "transition-duration": 250,
+    "modules": {
+      "screenshare": {
+        "format": "󰍹",
+        "tooltip": true
+      },
+      "audio-in": {
+        "format": "󰍬",
+        "tooltip": true
+      },
+      "audio-out": {
+        "format": "󰕾",
+        "tooltip": true
+      }
+    }
+  },
+
+  "systemd-failed-units": {
+    "format": "󰀪 {}",
+    "system": true,
+    "user": true,
+    "hide-on-ok": true,
+    "on-click": "foot -e systemctl --failed",
+    "tooltip": true
+  },
+
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "tooltip": true,
+    "on-click": "foot -e btop"
+  },
+
+  "memory": {
+    "format": "󰘚 {}%",
+    "tooltip": true,
+    "on-click": "foot -e btop"
+  },
+
+  "temperature": {
+    "format": "󰔏 {temperatureC}°C",
+    "critical-threshold": 80,
+    "format-critical": "󰔏 {temperatureC}°C",
+    "tooltip": true
+  },
+
+  "network": {
+    "format-wifi": "󰤨",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤭",
+    "tooltip-format-wifi": "{essid}\n{ifname} · {ipaddr}/{cidr}\n↓ {bandwidthDownBits} · ↑ {bandwidthUpBits}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Sin conexión",
+    "on-click": "nm-applet"
+  },
+
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-connected": "󰂱",
+    "tooltip-format": "{status}\n{num_connections} dispositivos conectados",
+    "on-click": "blueman-manager"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "tooltip-format": "{desc}\nVolumen: {volume}%",
+    "on-click": "hyprpwcenter",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "scroll-step": 5
+  },
+
+  "backlight": {
+    "format": "{icon}",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "tooltip-format": "Brillo: {percent}%",
+    "on-scroll-up": "brightnessctl s +5%",
+    "on-scroll-down": "brightnessctl s 5%-"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}",
+    "format-charging": "󰂄",
+    "format-plugged": "󰚥",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "tooltip-format": "{capacity}%\n{timeTo}\n{power}W"
+  },
+
+  "custom/power": {
+    "format": "󰐥",
+    "tooltip": true,
+    "tooltip-format": "Apagar / Reiniciar",
+    "on-click": "hyprshutdown"
   }
 }

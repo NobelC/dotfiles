@@ -10,6 +10,7 @@ ghostty
 git
 github-cli
 gitleaks
+grim
 grub
 hypridle
 hyprlauncher
@@ -38,6 +39,7 @@ npm
 obsidian
 openssh
 os-prober
+slurp
 spotify-launcher
 stow
 sudo
