@@ -22,9 +22,9 @@ hyprpolkitagent
 hyprpwcenter
 hyprshutdown
 hyprsunset
+inotify-tools
 intel-ucode
 jq
-kitty
 less
 libnotify
 linux
