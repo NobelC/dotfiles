@@ -7,6 +7,7 @@
 local services = {
 	"nm-applet",
 	"eww --force-wayland daemon",
+	"~/.local/bin/theme-watch-daemon.sh",
 }
 
 hl.on("hyprland.start", function()
