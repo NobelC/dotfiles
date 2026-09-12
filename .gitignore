@@ -31,8 +31,11 @@
 !aether/.config/aether/custom/**
 !mako/.config/mako/**
 !eww/.config/eww/**
+!walker/.config/walker/**
+
 !hypr/.config/hypr/**
 hypr/.config/hypr/theme_colors.lua
+
 
 !ghostty/.config/ghostty/**
 !btop/.config/btop/**

@@ -1,0 +1,55 @@
+@import "colors-aether.css";
+
+#window {
+  background: transparent;
+}
+
+#box {
+  background: alpha(@background, 0.92);
+  border: 1px solid alpha(@inactive, 0.55);
+  border-radius: 16px;
+  padding: 8px;
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-size: 13px;
+  color: @foreground;
+}
+
+#search {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid alpha(@inactive, 0.5);
+  border-radius: 0;
+  padding: 10px 12px 8px;
+  color: @foreground;
+  caret-color: @accent;
+}
+
+#search placeholder {
+  color: alpha(@foreground, 0.45);
+}
+
+#list {
+  background: transparent;
+  padding: 6px 4px;
+}
+
+#list row {
+  background: transparent;
+  border-radius: 10px;
+  padding: 6px 10px;
+  margin: 1px 2px;
+}
+
+#list row:selected,
+#list row:hover {
+  background: alpha(@accent, 0.16);
+  box-shadow: inset 2px 0 0 @accent;
+}
+
+#list row:selected label {
+  color: @accent;
+}
+
+#list row image {
+  margin-right: 8px;
+}

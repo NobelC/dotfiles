@@ -1,0 +1,14 @@
+{
+  "theme": "aether",
+  "window": {
+    "position": "center"
+  },
+  "list": {
+    "max_entries": 8,
+    "cycle": true,
+    "show_icons": true
+  },
+  "search": {
+    "placeholder": "search…"
+  }
+}
