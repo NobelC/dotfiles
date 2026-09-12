@@ -19,6 +19,7 @@ Deploy a single package: `stow -R <package>`. Full bootstrap: `./install.sh`.
 | `waybar/` | Bar; pill-shaped workspaces in CSS; colors via symlink to Aether |
 | `eww/` | Widgets (sys-stats panel) and click-catcher; static GTK CSS |
 | `wofi/` | Launcher; colors via symlink to Aether |
+| `walker/` | Launcher and theme picker; own theme directory consuming the Aether palette |
 | `mako/` | ASCII-flow notifications; colors via native `include` |
 | `ghostty/` | Terminal; theme via `config-file` include with `?` fallback |
 | `nvim/` | LazyVim; colorscheme via `dofile` of the Aether-generated spec, tokyonight fallback |
@@ -47,7 +48,8 @@ Integration patterns, in order of preference when adding a new consumer:
 | Consumer | Pattern | Reload on theme change |
 |---|---|---|
 | Mako | Native consumer `include` | `makoctl reload` (hook) |
-| Waybar, Wofi, EWW, Hyprland | Symlink to the Aether artifact | restart/reload (hook) or per-launch |
+| Waybar, EWW, Hyprland | Symlink to the Aether artifact | restart/reload (hook) |
+| Wofi, Walker | Symlink to the Aether artifact (Walker: inside its own theme directory) | per launch |
 | Ghostty, Neovim | include/dofile of the generated artifact | relaunch |
 | Btop | Copy into `themes/` via hook | relaunch |
 
