@@ -1,0 +1,95 @@
+@import "/home/nobel/.config/walker/themes/aether/colors-aether.css";
+
+* {
+  all: unset;
+}
+
+.box-wrapper {
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  background: @background;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid alpha(@inactive, 0.5);
+}
+
+.preview-box,
+.elephant-hint,
+.placeholder {
+  color: @foreground;
+}
+
+.search-container {
+  border-radius: 10px;
+}
+
+.input {
+  caret-color: @accent;
+  background: alpha(@foreground, 0.08);
+  padding: 10px;
+  border-radius: 10px;
+  color: @foreground;
+}
+
+.input placeholder {
+  opacity: 0.5;
+}
+
+.list {
+  color: @foreground;
+}
+
+.item-box {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.item-quick-activation {
+  background: alpha(@accent, 0.25);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+child:selected .item-box,
+row:selected .item-box {
+  background: alpha(@accent, 0.25);
+}
+
+.item-subtext {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.preview {
+  border: 1px solid alpha(@accent, 0.25);
+  border-radius: 10px;
+  color: @foreground;
+}
+
+.keybinds {
+  padding-top: 10px;
+  border-top: 1px solid alpha(@inactive, 0.4);
+  font-size: 12px;
+  color: @foreground;
+}
+
+.keybind-button {
+  opacity: 0.5;
+}
+
+.keybind-button:hover {
+  opacity: 0.75;
+}
+
+.keybind-label {
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px solid @foreground;
+}
+
+.error {
+  padding: 10px;
+  background: @accent;
+  color: @foreground;
+}
