@@ -50,7 +50,7 @@ window#waybar {
 
 #network,
 #bluetooth {
-  color: @cyan;
+  color: @red;
   padding: 0 5px;
   margin: 0 2px;
   transition: color 0.2s ease;
@@ -70,7 +70,7 @@ tooltip {
 }
 
 #battery {
-  color: @green;
+  color: @red;
   padding: 0 5px;
   margin: 0 2px;
   transition: color 0.3s ease;
@@ -94,7 +94,7 @@ tooltip {
 }
 
 #pulseaudio {
-  color: @green;
+  color: @red;
   padding: 0 5px;
   margin: 0 2px;
 }
@@ -106,7 +106,7 @@ tooltip {
 }
 
 #custom-mic {
-  color: @cyan;
+  color: @red;
   padding: 0 5px;
   margin: 0 2px;
   transition: color 0.2s ease;
@@ -117,19 +117,19 @@ tooltip {
 }
 
 #backlight {
-  color: @orange;
+  color: @red;
   padding: 0 5px;
   margin: 0 2px;
   transition: color 0.2s ease;
 }
 
 #cpu {
-  color: @cyan;
+  color: @red;
   padding: 0 5px;
   margin: 0 2px;
   transition: color 0.2s ease;
 }
 
 #cpu:hover {
-  color: @foreground;
+  color: @red;
 }
