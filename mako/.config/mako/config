@@ -1,5 +1,14 @@
 include=~/.config/aether/theme/mako.ini
 
-# Ajustes propios, no cubiertos por el tema de Aether
+# ── Ajustes propios ──────────────────────────────
 sort=-time
 layer=overlay
+
+# ── ASCII flow: el marco es texto, no chrome ─────
+font=JetBrainsMono Nerd Font 10
+icons=0
+border-size=0
+outer-margin=0,0,0,0
+padding=5
+width=400
+format=▌ <b>%a</b>\n▌ ──────────────────────────\n▌ %s\n▌ %b
