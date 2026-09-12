@@ -1,0 +1,38 @@
+@import "colors-aether.css";
+
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-size: 12px;
+}
+
+window {
+  background-color: transparent;
+}
+
+.sys-stats-box {
+  background-color: alpha(@background, 0.92);
+  border: 2px solid alpha(@inactive, 0.6);
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: @foreground;
+}
+
+.frame {
+  color: alpha(@accent, 0.7);
+}
+
+.row {
+  font-weight: 600;
+}
+
+.row-cpu  { color: @accent; }
+.row-ram  { color: @green; }
+.row-disk { color: @yellow; }
+.row-temp { color: @orange; }
+
+.bg-catcher {
+  background-color: transparent;
+  min-width: 3840px;
+  min-height: 2160px;
+}
