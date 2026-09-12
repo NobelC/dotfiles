@@ -6,7 +6,7 @@ WALLPAPER_DIR="$HOME/dotfiles/hypr/.config/hypr/wallpapers_user"
 
 selected=$(find "$WALLPAPER_DIR" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; |
   sort |
-  walker --dmenu --placeholder "Elige un wallpaper:")
+  walker --dmenu --theme aether --placeholder "Select wallpaper:")
 
 if [ -z "$selected" ]; then
   exit 0
