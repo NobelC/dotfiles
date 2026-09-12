@@ -7,9 +7,9 @@
 
 window {
   background-color: @bg;
-  border: 2px solid @gray3;
-  border-radius: 16px;
-  padding: 4px;
+  border: 1px solid @gray3;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 #input {
