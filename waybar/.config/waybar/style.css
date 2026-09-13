@@ -30,7 +30,6 @@ window#waybar {
 #workspaces button.active {
   background: @accent;
   min-width: 46px;
-  box-shadow: 0 0 8px alpha(@accent, 0.55);
 }
 
 #workspaces button:hover {
@@ -43,7 +42,7 @@ window#waybar {
 }
 
 #clock {
-  color: @accent;
+  color: @red;
   font-weight: bold;
   padding: 0 12px;
 }
