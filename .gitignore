@@ -32,6 +32,7 @@
 !mako/.config/mako/**
 !eww/.config/eww/**
 !walker/.config/walker/**
+!quickshell/.config/quickshell/**
 
 !hypr/.config/hypr/**
 hypr/.config/hypr/theme_colors.lua
