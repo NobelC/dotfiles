@@ -29,7 +29,7 @@ hl.bind(progs.mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(progs.mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
 -- Selector de wallpaper
-hl.bind(progs.mainMod .. " + T", hl.dsp.exec_cmd("~/.local/bin/wallpaper-picker.sh"))
+hl.bind(progs.mainMod .. " + T", hl.dsp.exec_cmd("pgrep -x qs >/dev/null && pkill qs || qs"))
 
 -- Aether GUI
 hl.bind(progs.mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("aether"))

@@ -52,6 +52,7 @@ Integration patterns, in order of preference when adding a new consumer:
 | Wofi, Walker | Symlink to the Aether artifact (Walker: inside its own theme directory) | per launch |
 | Ghostty, Neovim | include/dofile of the generated artifact | relaunch |
 | Btop | Copy into `themes/` via hook | relaunch |
+| `quickshell/` | Theme carousel: grid de tarjetas con previews de wallpaper; se lanza con `qs` a demanda | por invocación |
 
 Principles:
 

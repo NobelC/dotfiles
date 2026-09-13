@@ -14,9 +14,13 @@ ShellRoot {
 
         property var themes: []
 
+        // Hyprland's environment lacks ~/.local/bin: every process spawned
+        // from a keybind needs the PATH exported explicitly.
+        property string pathPrefix: "export PATH=\"$HOME/.local/bin:$PATH\"; "
+
         Process {
             id: modelProc
-            command: ["theme-carousel-model.sh"]
+            command: ["sh", "-c", win.pathPrefix + "theme-carousel-model.sh"]
             stdout: StdioCollector {
                 onStreamFinished: win.themes = JSON.parse(text)
             }
@@ -31,7 +35,7 @@ ShellRoot {
         }
 
         function applyTheme(t) {
-            applyProc.command = ["bash", "-c",
+            applyProc.command = ["sh", "-c", win.pathPrefix +
                 "aether --import-colors-toml '" + t.colors + "' --wallpaper '" + t.wallpaper + "'"]
             applyProc.running = true
         }
@@ -57,11 +61,6 @@ ShellRoot {
             focus: true
 
             Keys.onEscapePressed: Qt.quit()
-            Keys.onLeftPressed: moveCurrentIndexLeft()
-            Keys.onRightPressed: moveCurrentIndexRight()
-            Keys.onUpPressed: moveCurrentIndexUp()
-            Keys.onDownPressed: moveCurrentIndexDown()
-            Keys.onReturnPressed: if (currentIndex >= 0) win.applyTheme(win.themes[currentIndex])
 
             delegate: Rectangle {
                 width: 310
