@@ -37,6 +37,7 @@
 !hypr/.config/hypr/**
 hypr/.config/hypr/theme_colors.lua
 hypr/.config/hypr/hyprpaper.conf
+hypr/.config/hypr/wallpapers/user/**
 
 
 !ghostty/.config/ghostty/**
