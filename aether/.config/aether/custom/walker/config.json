@@ -1,0 +1,4 @@
+{
+  "template": "colors.css.tpl",
+  "destination": "~/.config/walker/themes/aether/colors-aether.css"
+}
