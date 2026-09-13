@@ -43,7 +43,7 @@ excel = [
     { run = 'libreoffice "$@"', orphan = true, desc = "LibreOffice" },
 ]
 archive = [
-    { run = 'unar "$@"', orphan = true, desc = "Extract here" },
+    { run = 'ouch d -y "$@"', orphan = true, desc = "Extract here (ouch)" },
 ]
 browser = [
     { run = 'firefox "$@"', orphan = true, desc = "Firefox" },

@@ -152,3 +152,19 @@ desc = "Submit input"
 on   = ["<Backspace>"]
 run  = "backspace"
 desc = "Delete the character before the cursor"
+
+# --- SONDAS TEMPORALES (se van en el siguiente commit) ---
+[[manager.keymap]]
+on   = ["<C-x>"]
+run  = 'shell --confirm "echo probe-shell > /tmp/yazi-probe"'
+desc = "PROBE shell command"
+
+[[manager.keymap]]
+on   = ["<C-r>"]
+run  = "bulk_rename"
+desc = "PROBE bulk rename"
+
+[[manager.keymap]]
+on   = ["<C-s>"]
+run  = "search --via=rg"
+desc = "PROBE rg content search"
