@@ -39,16 +39,12 @@ ShellRoot {
             }
         }
 
-        function applyTheme(t) {
-            console.log("Applying theme:", t.name)
-            console.log("Colors:", t.colors)
-            console.log("Wallpaper:", t.wallpaper)
-            applyProc.command = ["sh", "-c", win.pathPrefix +
-                "echo '[carousel] Applying " + t.name + "' && " +
-                "aether --import-colors-toml '" + t.colors + "' --wallpaper '" + t.wallpaper + "' && " +
-                "echo '[carousel] Apply complete'"]
-            applyProc.running = true
-        }
+      function applyTheme(t) {
+        console.log("Applying theme:", t.name, "from wallpaper:", t.wallpaper)
+        applyProc.command = ["sh", "-c", win.pathPrefix +
+        "aether --generate '" + t.wallpaper + "'"]
+        applyProc.running = true
+      }
 
         Rectangle {
             anchors.fill: parent
