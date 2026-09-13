@@ -36,6 +36,8 @@
 
 !hypr/.config/hypr/**
 hypr/.config/hypr/theme_colors.lua
+hypr/.config/hypr/hyprpaper.conf
+hypr/.config/hypr/wallpapers_user/**
 
 
 !ghostty/.config/ghostty/**
@@ -49,3 +51,7 @@ waybar/.config/waybar/colors-aether.css
 
 !wofi/.config/wofi/**
 wofi/.config/wofi/colors-aether.css
+
+# Wallpapers: solo los 3 de arch están en el repo
+# Los que Aether descarga van a wallpapers_user/ (no versionados)
+!hypr/.config/hypr/wallpapers/arch/**

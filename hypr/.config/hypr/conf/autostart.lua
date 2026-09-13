@@ -8,6 +8,8 @@ local services = {
 	"nm-applet",
 	"eww --force-wayland daemon",
 	"~/.local/bin/theme-watch-daemon.sh",
+	"~/.local/bin/aether-theme-cleanup.sh",
+	"~/.local/bin/aether-theme-cleanup.sh",
 }
 
 hl.on("hyprland.start", function()

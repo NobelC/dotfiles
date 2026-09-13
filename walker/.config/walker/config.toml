@@ -1,8 +1,0 @@
-theme = "aether"
-
-[list]
-max_entries = 8
-cycle = true
-
-[search]
-placeholder = "search…"
