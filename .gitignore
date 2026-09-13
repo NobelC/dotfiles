@@ -37,14 +37,11 @@
 !hypr/.config/hypr/**
 hypr/.config/hypr/theme_colors.lua
 hypr/.config/hypr/hyprpaper.conf
-hypr/.config/hypr/wallpapers_user/**
 
 
 !ghostty/.config/ghostty/**
 !btop/.config/btop/**
 btop/.config/btop/themes/**
-
-!hyprlauncher/.config/hyprlauncher/**
 
 !waybar/.config/waybar/**
 waybar/.config/waybar/colors-aether.css
