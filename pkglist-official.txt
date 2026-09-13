@@ -10,6 +10,7 @@ ffmpegthumbnailer
 firefox
 flatpak
 fuse2
+fzf
 ghostty
 git
 git-filter-repo
@@ -49,7 +50,6 @@ ouch
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
-poppler
 quickshell
 ripgrep
 slurp

@@ -4,3 +4,4 @@ hypridle.service
 hyprpaper.service
 waybar.service
 mako.service
+aether-theme-cleanup.service

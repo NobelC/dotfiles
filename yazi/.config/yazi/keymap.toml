@@ -153,18 +153,30 @@ on   = ["<Backspace>"]
 run  = "backspace"
 desc = "Delete the character before the cursor"
 
-# --- SONDAS TEMPORALES (se van en el siguiente commit) ---
+# --- COMPRESION (via plugin archiver) ---
 [[manager.keymap]]
-on   = ["<C-x>"]
-run  = 'shell --confirm "echo probe-shell > /tmp/yazi-probe"'
-desc = "PROBE shell command"
+on   = ["Z"]
+run  = "plugin archiver --args=zip"
+desc = "Compress selection to .zip"
 
 [[manager.keymap]]
-on   = ["<C-r>"]
+on   = ["X"]
+run  = "plugin archiver --args=tar.gz"
+desc = "Compress selection to .tar.gz"
+
+# --- BULK RENAME (nativo, permanente) ---
+[[manager.keymap]]
+on   = ["R"]
 run  = "bulk_rename"
-desc = "PROBE bulk rename"
+desc = "Bulk rename selected files in editor"
+
+# --- SEARCH (sonda sintaxis 26.9.1) ---
+[[manager.keymap]]
+on   = ["<C-f>"]
+run  = "search fd"
+desc = "PROBE3 search fd"
 
 [[manager.keymap]]
-on   = ["<C-s>"]
-run  = "search --via=rg"
-desc = "PROBE rg content search"
+on   = ["<C-g>"]
+run  = "search rg"
+desc = "PROBE3 search rg"
