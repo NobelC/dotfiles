@@ -147,3 +147,8 @@ desc = "Cancel input"
 on   = ["<Enter>"]
 run  = "close --submit"
 desc = "Submit input"
+
+[[input.keymap]]
+on   = ["<Backspace>"]
+run  = "backspace"
+desc = "Delete the character before the cursor"
