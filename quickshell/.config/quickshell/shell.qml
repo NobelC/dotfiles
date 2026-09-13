@@ -13,9 +13,6 @@ ShellRoot {
         color: "transparent"
 
         property var themes: []
-
-        // Hyprland's environment lacks ~/.local/bin: every process spawned
-        // from a keybind needs the PATH exported explicitly.
         property string pathPrefix: "export PATH=\"$HOME/.local/bin:$PATH\"; "
 
         Process {
@@ -30,13 +27,26 @@ ShellRoot {
         Process {
             id: applyProc
             stdout: StdioCollector {
-                onStreamFinished: Qt.quit()
+                onStreamFinished: {
+                    console.log("[applyProc stdout]", text)
+                    Qt.quit()
+                }
+            }
+            stderr: StdioCollector {
+                onStreamFinished: {
+                    console.log("[applyProc stderr]", text)
+                }
             }
         }
 
         function applyTheme(t) {
+            console.log("Applying theme:", t.name)
+            console.log("Colors:", t.colors)
+            console.log("Wallpaper:", t.wallpaper)
             applyProc.command = ["sh", "-c", win.pathPrefix +
-                "aether --import-colors-toml '" + t.colors + "' --wallpaper '" + t.wallpaper + "'"]
+                "echo '[carousel] Applying " + t.name + "' && " +
+                "aether --import-colors-toml '" + t.colors + "' --wallpaper '" + t.wallpaper + "' && " +
+                "echo '[carousel] Apply complete'"]
             applyProc.running = true
         }
 
