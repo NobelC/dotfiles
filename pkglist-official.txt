@@ -45,8 +45,10 @@ os-prober
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+quickshell
 slurp
 stow
+strace
 sudo
 swayimg
 tree
