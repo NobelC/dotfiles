@@ -8,7 +8,7 @@ watch_themes() {
     while read -r dir; do
         case "$dir" in
             */backgrounds/)
-                t=$(basename "$(dirname "${dir%/})")
+                t=$(basename "$(dirname "${dir%/}")")
                 [ -n "$t" ] && rm -rf "$THEMES/$t"
                 ;;
         esac
