@@ -1,10 +1,14 @@
 alsa-utils
 base
 base-devel
+bat
 brightnessctl
 btop
 clang
+duf
+dust
 efibootmgr
+eza
 fd
 ffmpegthumbnailer
 firefox
@@ -13,9 +17,11 @@ fuse2
 fzf
 ghostty
 git
+git-delta
 git-filter-repo
 github-cli
 gitleaks
+glow
 grim
 grub
 hypridle
@@ -57,6 +63,7 @@ stow
 strace
 sudo
 swayimg
+tldr
 tree
 ttf-jetbrains-mono-nerd
 unarchiver

@@ -1,0 +1,5 @@
+# base16-256 delega en la paleta de la terminal:
+# si aether/ghostty cambian de tema, bat cambia con ellos.
+--theme=base16-256
+--style=numbers,changes,grid
+--italic-text=always

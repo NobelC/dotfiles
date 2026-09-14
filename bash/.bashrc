@@ -63,4 +63,40 @@ eval "$(zoxide init bash)"
 
 alias dot="cd ~/dotfiles/ && nvim ."
 alias bar="pkill waybar && waybar &"
+# ==========================================
+# MODERN CLI - reemplazos visuales
+# ==========================================
+
+# ls -> eza (iconos, git status, tree)
+alias ls='eza --icons=auto --group-directories-first'
+alias l='eza --icons=auto -l --group-directories-first --git'
+alias ll='eza --icons=auto -lh --group-directories-first --git'
+alias la='eza --icons=auto -lah --group-directories-first --git'
+alias lt='eza --icons=auto --tree --level=2 --group-directories-first'
+
+# cat -> bat (syntax highlighting, marcas de diff)
+alias catn='bat --paging=never'
+alias cat='bat'
+
+# man pages con highlight
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# top -> btop | du -> dust | df -> duf | diff -> delta
+alias top='btop'
+alias htop='btop'
+alias du='dust'
+alias df='duf --hide special'
+alias diff='delta --side-by-side'
+
+# markdown renderizado en terminal
+alias md='glow -p'
+
+# fzf: keybindings (Ctrl+R historial, Ctrl+T archivos, Alt+C cd)
+source /usr/share/fzf/shell/key-bindings.bash 2>/dev/null
+source /usr/share/fzf/shell/completion.bash 2>/dev/null
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d --hidden --exclude .git"
+
 export PATH="$HOME/.local/bin:$PATH"

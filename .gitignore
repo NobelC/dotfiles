@@ -33,6 +33,7 @@
 !eww/.config/eww/**
 !walker/.config/walker/**
 !quickshell/.config/quickshell/**
+!bat/.config/bat/**
 
 !hypr/.config/hypr/**
 hypr/.config/hypr/theme_colors.lua
