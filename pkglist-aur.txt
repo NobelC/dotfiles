@@ -2,6 +2,8 @@ aether
 aur
 elephant
 eww
+hypridle-git
+hypridle-git-debug
 hyprland-git
 hyprsysteminfo
 spotify

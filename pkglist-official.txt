@@ -24,7 +24,6 @@ gitleaks
 glow
 grim
 grub
-hypridle
 hyprlock
 hyprpaper
 hyprpicker

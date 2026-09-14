@@ -61,7 +61,7 @@ function y() {
 }
 eval "$(zoxide init bash)"
 
-alias dot="cd ~/dotfiles/ && nvim ."
+alias dot="cd ~/dotfiles/"
 alias bar="pkill waybar && waybar &"
 # ==========================================
 # MODERN CLI - reemplazos visuales
