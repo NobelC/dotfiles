@@ -1,129 +1,85 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 34,
+  "height": 38,
   "spacing": 4,
   "margin-top": 2,
   "margin-left": 2,
   "margin-right": 2,
-  "modules-left": [
-    "clock",
-    "hyprland/submap"
-  ],
-  "modules-center": [
-    "hyprland/workspaces",
-  ],
-  "modules-right": [
-    "network",
-    "bluetooth",
-    "battery",
-    "pulseaudio",
-    "custom/mic",
-    "backlight",
-    "cpu"
-  ],
+
+  "modules-left": ["clock", "hyprland/submap"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["network", "battery", "pulseaudio", "backlight", "cpu"],
+
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "default": "",
+      "1": "1", "2": "2", "3": "3", "4": "4", "5": "5",
+      "default": ""
     },
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5]
-    }
+    "persistent-workspaces": { "*": [1, 2, 3, 4, 5] }
   },
+
   "hyprland/submap": {
     "format": "󰌌 {}",
     "tooltip": false
   },
+
   "clock": {
     "format": "{:%H:%M:%S}",
     "format-alt": "{:%A, %d %B %Y}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "interval": 1
   },
+
   "network": {
-    "format-wifi": "󰤨",
-    "format-ethernet": "󰈀",
+    "format-wifi": "",
+    "format-ethernet": "",
     "format-disconnected": "󰤭",
     "tooltip-format-wifi": "{essid}\n{ifname} · {ipaddr}/{cidr}\n↓ {bandwidthDownBits} · ↑ {bandwidthUpBits}",
     "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}",
     "tooltip-format-disconnected": "Sin conexión",
-    "on-click": "nm-applet",
+    "on-click": "/home/nobel/.local/bin/netmenu.sh",
+    "on-click-right": "nmcli radio wifi toggle",
     "interval": 5
   },
-  "bluetooth": {
-    "format": "󰂲",
-    "format-disabled": "󰂲",
-    "format-off": "󰂲",
-    "format-connected": "󰂯",
-    "tooltip-format": "{status}\n{num_connections} dispositivos conectados",
-    "on-click": "blueman-manager"
-  },
+
   "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
+    "states": { "warning": 30, "critical": 15 },
     "format": "{icon}",
     "format-charging": "󰂄",
     "format-plugged": "󰚥",
-    "format-icons": [
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
-    "tooltip-format": "{capacity}%\n{timeTo}\n{power}W",
+    "format-icons": ["","󰁻","󰁼","","","󰁿","","","","󰁹"],
+    "tooltip-format": "{capacity}% · {power}W · {timeTo}",
     "interval": 10
   },
-  "pulseaudio": {
-  "format": "{icon}",
-  "format-muted": "󰝟",
-  "format-icons": {
-    "headphone": "󰋋",
-    "hands-free": "󰋋",
-    "headset": "󰋋",
-    "phone": "󰏲",
-    "portable": "󰏲",
-    "car": "󰏲",
-    "default": ["󰝟","󰕿","󰕾"]
-  },
-  "tooltip-format": "Volumen: {volume}%\n{desc}",
-  "on-click": "pavucontrol",
-  "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-  "scroll-step": 5
-},
-"custom/mic": {
-  "format": "{}",
-  "exec": "/home/nobel/dotfiles/scripts/.local/bin/mic.sh",
-  "interval": 2,
-  "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-  "tooltip-format": "Micrófono"
-},
-  "backlight": {
-  "format": "{icon}",
-  "format-icons": ["󰃞", "󰃟", "󰃠"],
-  "tooltip-format": "Brillo: {percent}%",
-  "on-scroll-up": "brightnessctl set 5%+",
-  "on-scroll-down": "brightnessctl set 5%-",
-  "interval": 5
-},
 
-"cpu": {
-  "format": "󰍛",
-  "tooltip": false,
-  "on-click": "/home/nobel/.local/bin/toggle-cpu-stats.sh"
-}
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "󰋋",
+      "headset": "󰋋",
+      "default": ["󰝟", "", ""]
+    },
+    "tooltip-format": "Volumen: {volume}% · {desc}",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "scroll-step": 5
+  },
+
+  "backlight": {
+    "format": "{icon}",
+    "format-icons": ["", "󰃟", "󰃠"],
+    "tooltip-format": "Brillo: {percent}%",
+    "on-scroll-up": "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "interval": 5
+  },
+
+  "cpu": {
+    "format": "󰍛",
+    "tooltip": false,
+    "on-click": "/home/nobel/.local/bin/toggle-cpu-stats.sh"
+  }
 }

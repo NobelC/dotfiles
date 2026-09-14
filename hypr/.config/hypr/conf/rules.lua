@@ -67,3 +67,16 @@ hl.window_rule({
 	float = true,
 	pin = true,
 })
+
+-- ==========================================
+-- NETMENU (selector Wi-Fi): flotante, centrado, efímero
+-- ==========================================
+hl.window_rule({
+	name = "netmenu-floating",
+	match = { initial_title = "netmenu" },
+	float = true,
+	center = true,
+	size = { 640, 480 },
+	dim_around = true,
+	animation = "popin 80%",
+})

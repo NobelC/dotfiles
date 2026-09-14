@@ -83,15 +83,6 @@ tooltip {
   color: @red;
 }
 
-#custom-music {
-  color: @accent;
-  padding: 0 5px;
-  margin: 0 4px;
-  background: alpha(@accent, 0.1);
-  border-radius: 6px;
-  font-weight: 500;
-}
-
 #pulseaudio {
   color: @red;
   padding: 0 5px;
