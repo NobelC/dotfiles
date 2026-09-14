@@ -30,7 +30,8 @@ CURRENT=$(nmcli -t -f ACTIVE,SSID dev wifi 2>/dev/null | awk -F: '/^yes:/{print 
 
 CHOICE=$(
   nmcli -t -f SSID,SIGNAL,SECURITY dev wifi 2>/dev/null |
-    awk -F: '{printf "%s\t%3s%%  %s\n", $1, $2, ($3 == "" ? "abierta" : $3)}' |
+    sort -t: -k2 -rn |
+    awk -F: '!seen[$1]++ {printf "%s\t%3s%%  %s\n", $1, $2, ($3 == "" ? "abierta" : $3)}' |
     fzf --height=60% --layout=reverse --border \
       --prompt='Red  ' \
       --header='ENTER conectar/desconectar · ESC salir' |
