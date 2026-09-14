@@ -50,10 +50,15 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-export PROJECT_DIR="$HOME/GitHub-Repo/"
-clone() {
-  local path="" repo name url
+export PROJECTS_DIR="$HOME/GitHub-Repo"
 
+# clone: clona dentro de $PROJECTS_DIR y entra al repo
+#   clone user/repo          -> GitHub por SSH
+#   clone https://... | git@...  -> URL tal cual
+#   clone -s user/repo       -> shallow (--depth 1)
+#   clone user/repo mi-nombre -> nombre de carpeta custom
+clone() {
+  local depth="" repo name url target_dir
   if [[ "$1" == "-s" ]]; then
     depth="--depth 1"
     shift
@@ -64,15 +69,28 @@ clone() {
     return 1
   }
 
+  # Distinguir shorthand de URL
   if [[ "$repo" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]; then
-    url="git@hub.com:${repo}.git"
+    url="git@github.com:${repo}.git"
   else
     url="$repo"
   fi
 
-  mkdir -p "PROJECT_DIR"
+  # Normalizar: sin trailing slash (previene la //)
+  PROJECTS_DIR="${PROJECTS_DIR%/}"
+  # Si no se pasó nombre, derivarlo de la URL
   name="${name:-$(basename "$url" .git)}"
-  git clone $depth "$url" "$PROJECT_DIR/$name" && cd "$PROJECT_DIR/name"
+  target_dir="$PROJECTS_DIR/$name"
+
+  # Si ya existe, no reclonar: entrar directo
+  if [[ -d "$target_dir" ]]; then
+    echo "✓  $target_dir ya existe, entrando"
+    cd "$target_dir" || return 1
+    return 0
+  fi
+
+  mkdir -p "$PROJECTS_DIR"
+  git clone $depth "$url" "$target_dir" && cd "$target_dir"
 }
 
 # Yazi wrapper function for cd on quit
@@ -117,6 +135,12 @@ alias diff='delta --side-by-side'
 alias md='glow -p'
 
 alias lg='lazygit'
+
+# Tree visual limpio
+alias tree='eza --tree --icons=auto --group-directories-first --git-ignore'
+alias treea='eza --tree --icons=auto --group-directories-first -a --ignore-glob=.git'
+alias tree2='eza --tree --icons=auto --group-directories-first --level=2 --git-ignore'
+alias tree3='eza --tree --icons=auto --group-directories-first --level=3 --git-ignore'
 
 # fzf: keybindings (Ctrl+R historial, Ctrl+T archivos, Alt+C cd)
 source /usr/share/fzf/shell/key-bindings.bash 2>/dev/null

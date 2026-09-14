@@ -34,6 +34,7 @@
 !walker/.config/walker/**
 !quickshell/.config/quickshell/**
 !bat/.config/bat/**
+!git/**
 
 !hypr/.config/hypr/**
 hypr/.config/hypr/theme_colors.lua
