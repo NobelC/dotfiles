@@ -1,0 +1,6 @@
+# <tipo>: <sujeto en imperativo, <= 72 caracteres>
+# tipos: feat fix refactor docs test chore perf
+#
+# Cuerpo: POR QUÉ, no qué. Contexto, consecuencias, trade-offs.
+#
+# Refs: #123, closes #456

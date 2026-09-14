@@ -50,6 +50,31 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
+export PROJECT_DIR="$HOME/GitHub-Repo/"
+clone() {
+  local path="" repo name url
+
+  if [[ "$1" == "-s" ]]; then
+    depth="--depth 1"
+    shift
+  fi
+  repo="$1" name="$2"
+  [[ -z "$repo" ]] && {
+    echo "uso: clone [-s] user/repo|url [nombre]"
+    return 1
+  }
+
+  if [[ "$repo" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]; then
+    url="git@hub.com:${repo}.git"
+  else
+    url="$repo"
+  fi
+
+  mkdir -p "PROJECT_DIR"
+  name="${name:-$(basename "$url" .git)}"
+  git clone $depth "$url" "$PROJECT_DIR/$name" && cd "$PROJECT_DIR/name"
+}
+
 # Yazi wrapper function for cd on quit
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -90,6 +115,8 @@ alias diff='delta --side-by-side'
 
 # markdown renderizado en terminal
 alias md='glow -p'
+
+alias lg='lazygit'
 
 # fzf: keybindings (Ctrl+R historial, Ctrl+T archivos, Alt+C cd)
 source /usr/share/fzf/shell/key-bindings.bash 2>/dev/null
