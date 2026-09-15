@@ -266,7 +266,7 @@ repos() {
 # DOTFILES HELPERS
 # ==========================================
 alias dot="cd ~/dotfiles/"
-alias bar="pkill waybar && waybar &"
+alias bar="pkill waybar && waybar >/tmp/waybar.log 2>&1 &"
 
 # ==========================================
 # YAZI & ZOXIDE
