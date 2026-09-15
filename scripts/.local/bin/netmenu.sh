@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # netmenu.sh — selector de Wi-Fi: nmcli + fzf
 # Sin TTY (click waybar): se re-ejecuta en el terminal disponible
-if [ ! -t 0 ]; then
+if [ "${MENU_FLOAT:-0}" != 1 ]; then export MENU_FLOAT=1;
   if command -v ghostty >/dev/null 2>&1; then
     exec ghostty --title=netmenu -e "$0" "$@"
   elif command -v kitty >/dev/null 2>&1; then

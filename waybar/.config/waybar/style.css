@@ -54,6 +54,10 @@ window#waybar {
   margin: 0 2px;
   transition: color 0.2s ease;
 }
+#bluetooth.disabled,
+#bluetooth.off {
+  color: @inactive;
+}
 
 #network.disconnected,
 #bluetooth.disabled,
