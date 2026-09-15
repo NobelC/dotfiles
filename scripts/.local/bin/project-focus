@@ -1,0 +1,90 @@
+#!/bin/bash
+
+HOSTS="/etc/hosts"
+BLOCKLIST="/etc/project-focus-blocklist"
+BACKUP="/etc/hosts.focus.bak"
+STATE="/etc/project-focus.state"
+
+apply() {
+  # Ejecutar todo el bloque de escritura y movimiento dentro de un único shell root
+  # Esto evita conflictos de permisos con las redirecciones (> y >>)
+  sudo sh -c "
+        grep -v 'PROJECT FOCUS' '$BACKUP' > /tmp/hosts.new 2>/dev/null || true
+        echo '' >> /tmp/hosts.new
+        echo '# --- PROJECT FOCUS BLOCKS ---' >> /tmp/hosts.new
+        awk '{print \"0.0.0.0 \" \$1}' '$BLOCKLIST' >> /tmp/hosts.new
+        mv /tmp/hosts.new '$HOSTS'
+        chattr +i '$HOSTS'
+    "
+}
+
+remove() {
+  sudo chattr -i "$HOSTS" 2>/dev/null || true
+  if [ -f "$BACKUP" ]; then
+    sudo cp "$BACKUP" "$HOSTS"
+    sudo rm -f "$BACKUP"
+  fi
+  sudo rm -f "$STATE"
+}
+
+case "$1" in
+enforce)
+  if [ -f "$STATE" ]; then
+    UNTIL=$(cat "$STATE")
+    NOW=$(date +%s)
+    if [[ "$UNTIL" =~ ^[0-9]+$ ]] && [ "$NOW" -lt "$UNTIL" ]; then
+      apply
+    else
+      remove
+    fi
+  else
+    remove
+  fi
+  ;;
+start)
+  [ -z "$2" ] && {
+    echo "Uso: project-focus start <tiempo> (ej: 5m, 1h)"
+    exit 1
+  }
+
+  if [ -f "$STATE" ]; then
+    UNTIL=$(cat "$STATE")
+    NOW=$(date +%s)
+    if [[ "$UNTIL" =~ ^[0-9]+$ ]] && [ "$NOW" -lt "$UNTIL" ]; then
+      echo "⚠️ Ya activo. Restan $(((UNTIL - NOW) / 60)) min."
+      exit 1
+    else
+      remove
+    fi
+  fi
+
+  PARSED=$(echo "$2" | sed -e 's/m/ minutes/g' -e 's/h/ hours/g' -e 's/d/ days/g')
+  UNTIL=$(date -d "+ $PARSED" +%s)
+  [ -z "$UNTIL" ] && {
+    echo "❌ Formato inválido."
+    exit 1
+  }
+
+  echo "$UNTIL" | sudo tee "$STATE" >/dev/null
+  sudo cp "$HOSTS" "$BACKUP"
+  apply
+  sudo systemctl enable --now project-focus-enforce.timer
+
+  echo "✅ Bloqueo activo hasta: $(date -d "@$UNTIL" "+%Y-%m-%d %H:%M:%S")"
+  ;;
+status)
+  if [ -f "$STATE" ]; then
+    UNTIL=$(cat "$STATE")
+    NOW=$(date +%s)
+    if [[ "$UNTIL" =~ ^[0-9]+$ ]] && [ "$NOW" -lt "$UNTIL" ]; then
+      echo "🔒 ACTIVO. Restan: $(((UNTIL - NOW) / 60)) min."
+      exit 0
+    fi
+  fi
+  echo "🔓 INACTIVO."
+  ;;
+*)
+  echo "Uso: project-focus {start <tiempo>|status}"
+  exit 1
+  ;;
+esac

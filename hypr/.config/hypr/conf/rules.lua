@@ -73,7 +73,7 @@ hl.window_rule({
 -- ==========================================
 hl.window_rule({
 	name = "menus-floating",
-	match = { initial_title = "netmenu|btmenu|powmenu|volmenu|brimenu|projectpicker" },
+	match = { initial_title = "netmenu|btmenu|powmenu|volmenu|brimenu" },
 	float = true,
 	center = true,
 	size = { 640, 480 },

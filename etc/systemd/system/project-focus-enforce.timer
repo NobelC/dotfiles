@@ -1,0 +1,12 @@
+[Unit]
+Description=Check Project Focus status every minute and on boot
+
+[Timer]
+# Verifica 1 minuto después del arranque (sobrevive a reboots)
+OnBootSec=1min
+# Verifica cada minuto mientras está encendido
+OnUnitActiveSec=1min
+Unit=project-focus-enforce.service
+
+[Install]
+WantedBy=timers.target
