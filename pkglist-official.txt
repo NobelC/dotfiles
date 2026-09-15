@@ -1,4 +1,5 @@
 alsa-utils
+arduino-cli
 base
 base-devel
 bat
@@ -25,6 +26,7 @@ git-filter-repo
 github-cli
 gitleaks
 glow
+gradle
 grim
 grub
 hyprlock
@@ -36,8 +38,10 @@ hyprshutdown
 hyprsunset
 inotify-tools
 intel-ucode
+jdk-openjdk
 jq
 just
+kotlin
 lazygit
 less
 libnotify
@@ -47,6 +51,7 @@ luarocks
 ly
 mako
 man-db
+maven
 mpv
 nano
 nautilus
@@ -88,5 +93,3 @@ zathura
 zathura-pdf-mupdf
 zip
 zoxide
-just
-python-pip
