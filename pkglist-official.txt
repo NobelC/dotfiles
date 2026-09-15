@@ -2,6 +2,8 @@ alsa-utils
 base
 base-devel
 bat
+bluez
+bluez-utils
 brightnessctl
 btop
 clang
@@ -34,6 +36,7 @@ hyprsunset
 inotify-tools
 intel-ucode
 jq
+lazygit
 less
 libnotify
 linux

@@ -69,11 +69,11 @@ hl.window_rule({
 })
 
 -- ==========================================
--- NETMENU (selector Wi-Fi): flotante, centrado, efímero
+-- MENÚS FLOTANTES (netmenu, btmenu): flotantes, centrados, efímeros
 -- ==========================================
 hl.window_rule({
-	name = "netmenu-floating",
-	match = { initial_title = "netmenu" },
+	name = "menus-floating",
+	match = { initial_title = "netmenu|btmenu|powmenu|volmenu|brimenu" },
 	float = true,
 	center = true,
 	size = { 640, 480 },
