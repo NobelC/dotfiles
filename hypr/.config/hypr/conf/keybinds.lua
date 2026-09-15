@@ -290,7 +290,8 @@ hl.bind(progs.mainMod .. " + ESCAPE", function()
 	end
 end)
 
-hl.bind(progs.mainMod .. " + SHIFT + J", hl.dsp.exec_cmd("ghostty --title=projmenu -e /home/nobel/.local/bin/proj"))
+-- Selector de proyectos (build/test/run/lint automatizado)
+hl.bind(progs.mainMod .. " + P", hl.dsp.exec_cmd("~/.local/bin/project-picker.sh"))
 
 -- ==========================================
 -- FIN DE KEYBINDS

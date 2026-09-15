@@ -284,3 +284,5 @@ function y() {
 
 # Zoxide (smart cd)
 eval "$(zoxide init bash)"
+eval $(luarocks path --no-bin)
+export PATH="$HOME/.luarocks/bin:$PATH"

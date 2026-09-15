@@ -2,6 +2,7 @@ alsa-utils
 base
 base-devel
 bat
+bats
 bluez
 bluez-utils
 brightnessctl
@@ -36,11 +37,13 @@ hyprsunset
 inotify-tools
 intel-ucode
 jq
+just
 lazygit
 less
 libnotify
 linux
 linux-firmware
+luarocks
 ly
 mako
 man-db
@@ -58,8 +61,13 @@ ouch
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+python-pip
+python-pytest
 quickshell
 ripgrep
+ruff
+shellcheck
+shfmt
 slurp
 stow
 strace
@@ -80,3 +88,5 @@ zathura
 zathura-pdf-mupdf
 zip
 zoxide
+just
+python-pip
