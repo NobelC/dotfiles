@@ -6,14 +6,13 @@ BACKUP="/etc/hosts.focus.bak"
 STATE="/etc/project-focus.state"
 
 apply() {
-  # Ejecutar todo el bloque de escritura y movimiento dentro de un único shell root
-  # Esto evita conflictos de permisos con las redirecciones (> y >>)
   sudo sh -c "
         grep -v 'PROJECT FOCUS' '$BACKUP' > /tmp/hosts.new 2>/dev/null || true
         echo '' >> /tmp/hosts.new
         echo '# --- PROJECT FOCUS BLOCKS ---' >> /tmp/hosts.new
         awk '{print \"0.0.0.0 \" \$1}' '$BLOCKLIST' >> /tmp/hosts.new
-        mv /tmp/hosts.new '$HOSTS'
+        cp /tmp/hosts.new '$HOSTS'
+        rm -f /tmp/hosts.new
         chattr +i '$HOSTS'
     "
 }
@@ -42,6 +41,7 @@ enforce)
   fi
   ;;
 start)
+  sudo chattr -i "$HOSTS" 2>/dev/null || true
   [ -z "$2" ] && {
     echo "Uso: project-focus start <tiempo> (ej: 5m, 1h)"
     exit 1

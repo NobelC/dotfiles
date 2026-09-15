@@ -35,7 +35,7 @@
 !quickshell/.config/quickshell/**
 !bat/.config/bat/**
 !git/**
-!etc/systemd/system/**
+!etc/**
 
 !hypr/.config/hypr/**
 hypr/.config/hypr/theme_colors.lua
