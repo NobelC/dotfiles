@@ -80,3 +80,15 @@ hl.window_rule({
 	dim_around = true,
 	animation = "popin 80%",
 })
+
+-- ==========================================
+-- PROJMENU: picker de proyectos, flotante y amplio
+-- ==========================================
+hl.window_rule({
+	name = "projmenu-floating",
+	match = { initial_title = "projmenu" },
+	float = true,
+	center = true,
+	size = { "(monitor_w*0.75)", "(monitor_h*0.80)" },
+	animation = "popin 80%",
+})

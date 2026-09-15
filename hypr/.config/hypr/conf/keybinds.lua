@@ -290,6 +290,8 @@ hl.bind(progs.mainMod .. " + ESCAPE", function()
 	end
 end)
 
+hl.bind(progs.mainMod .. " + SHIFT + J", hl.dsp.exec_cmd("ghostty --title=projmenu -e /home/nobel/.local/bin/proj"))
+
 -- ==========================================
 -- FIN DE KEYBINDS
 -- ==========================================
