@@ -17,12 +17,7 @@ return {
             "--fallback-style=llvm",
             "-j=4",
           },
-          filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
-          root_dir = function(fname)
-            return require("lspconfig.util").root_pattern("CMakeLists.txt", "Makefile", "compile_commands.json", ".git")(
-              fname
-            ) or vim.fn.getcwd()
-          end,
+          root_markers = { "compile_commands.json", "CMakeLists.txt", "Makefile", ".git" },
         },
       },
     },

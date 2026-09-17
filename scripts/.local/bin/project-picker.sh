@@ -62,8 +62,8 @@ while true; do
   SEL=$(
     {
       list_projects
-      printf '__NEW__\t✨  Nuevo proyecto\n'
-    } | fzf --height=70% --layout=reverse --border \
+      printf '__NEW__\t  Nuevo proyecto\n'
+    } | fzf --height=100% --layout=reverse --border \
       --delimiter='\t' --with-nth=2 \
       --prompt='Proyecto  ' \
       --preview="[ {1} = __NEW__ ] && echo 'Crear un proyecto nuevo' || bash '$SELF_DIR/project-preview.sh' '$PROJECTS_DIR/{1}'" \

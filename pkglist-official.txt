@@ -4,6 +4,7 @@ base
 base-devel
 bat
 bats
+bind
 bluez
 bluez-utils
 brightnessctl
@@ -47,6 +48,7 @@ less
 libnotify
 linux
 linux-firmware
+llvm
 luarocks
 ly
 mako
